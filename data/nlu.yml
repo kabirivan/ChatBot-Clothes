@@ -87,3 +87,28 @@ nlu:
     - eres un humano?   
     - estas vivo
     - realmente existes
+
+
+- intent: chitchat
+  examples: |
+    - quiero conocer a tu creador
+    - quiero saber quien te diseñó
+    - quiero saber quien te creó
+    - quiero conocer quien te diseño
+    - quiero conocer quien te creó
+    - puedo saber quien te creó
+    - puedo saber quien te diseñó
+    - dime quien te creó
+    - dime acerca de tu creadores
+    - quien es tu creador
+    - todo esta bien?
+    - te sientes bien?
+    - como esta tu dia hoy?
+    - como te sientes hoy?
+    - estas bien?
+    - como está el clima hoy?
+    - esta lloviendo?
+    - esta haciendo sol?
+    - esta soleado?
+    - cual es el pronostico del clima?
+    - hace mucho viento afuera?
