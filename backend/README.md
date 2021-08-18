@@ -1,3 +1,8 @@
+## Create environment
+python3 -m venv env
+source env/bin/activate
+
+
 ## CREATE PROJECT
 django-admin startproject chatbot .
 
