@@ -17,22 +17,7 @@ class Product(models.Model):
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
 
-    def get_url(self):
-        return reverse('product_detail', args=[self.category.slug, self.slug])
+
 
     def __str__(self):
         return self.product_name
-
-    def averageReview(self):
-        reviews = ReviewRating.objects.filter(product=self, status=True).aggregate(average=Avg('rating'))
-        avg = 0
-        if reviews['average'] is not None:
-            avg = float(reviews['average'])
-        return avg
-
-    def countReview(self):
-        reviews = ReviewRating.objects.filter(product=self, status=True).aggregate(count=Count('id'))
-        count = 0
-        if reviews['count'] is not None:
-            count = int(reviews['count'])
-        return count
