@@ -16,18 +16,7 @@ nlu:
     - hola bot
     - saludo
     - hola robot
-
-- intent: goodbye
-  examples: |
-    - chao
-    - adios
-    - hasta mañana
-    - te veo luego 
-    - hasta pronto
-    - hasta otro dia
-    - bye
-    - nos vemos luego
-
+    
 - intent: affirm
   examples: |
     - si
@@ -138,3 +127,12 @@ nlu:
     - rebaje
 
 - intent: chitchat/goodbye
+  examples: |
+    - chao
+    - adios
+    - hasta mañana
+    - te veo luego 
+    - hasta pronto
+    - hasta otro dia
+    - bye
+    - nos vemos luego

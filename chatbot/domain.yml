@@ -9,6 +9,7 @@ intents:
   - mood_unhappy
   - bot_challenge
   - chitchat
+  - faq
 
 responses:
   utter_greet:
