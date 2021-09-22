@@ -2,34 +2,71 @@ version: "2.0"
 
 intents:
   - greet
-  - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
   - chitchat
   - faq
+  - out_of_scope
+  - nlu_fallback
 
 responses:
   utter_greet:
   - text: "Hola! Como estás?"
 
-  utter_cheer_up:
-  - text: "Aquí hay algo que te puede ayudar:"
+  utter_default:
+  - text: Lo siento, pero no te entendí. ¿Puedes repetírmelo?
+  - text: Ummm, qué me acabas de decir?
+  - text: beep, boop! No entiendo lo que me quieres decir!
+
+  utter_faq/sizing_clarification:
+  - text: Quiero mencionarte que en Creaciones Jasmin manejamos tallas americanas para confeccionar la ropa para niñ@s. 
+  
+  utter_faq/payment_methods:
+  - text: Muy buena pregunta! Nosotros aceptamos transferencias, tarjetas de crédito, depositos y efectivo. Así que no te preocupes tenemos varias alternativas de pago.
+
+  utter_faq/promotions:
+  - text: Lo siento, actualmente no tenemos promociones, pero el proximo mes tendremos descuentos de haste el 50%. Así que mantente alerta!
+
+  utter_chitchat/thanks:
+  - text: Con mucho gusto.
+  - text: Es un placer.
+  - text: De nada, cuenta conmigo.
+  - text: Lo hacemos con mucho cariño.
+
+  utter_chitchat/confirm_presence:
+  - text: Sí, aquí estoy!
+  - text: Te estoy escuchando!
+  - text: Claro, estoy siempre listo para atenderte.
+  - text: Por supesto, cuenta conmigo!
+
+  utter_chitchat/capabilities:
+  - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia!
+
+  utter_chitchat/mood_great:
+  - text: Qué bien! Me alegro muchisimo.
+  - text: Excelente! Eres el mejor.
+  - text: Sigue así!
+
+  utter_chitchat/mood_unhappy:
+  - text: Siento mucho escuchar eso. Mira esto es para ti!
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
-  utter_did_that_help:
-  - text: "Eso te ayudó?"
+  utter_chitchat/bot_challenge:
+  - text: Soy un asistente conversacional creado por Xavier. Beep boop!
 
-  utter_happy:
-  - text: "Grandioso!"
+  utter_chitchat/goodbye:
+  - text: Chao, cuidate mucho, gracias por escribirme.
+  - text: Hasta luego, es un placer atenderte.
+  - text: Hasta pronto, es un placer chatear contigo.
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_chitchat/developer:
+  - text: Mi creador se llamaa [Xavier](https://www.google.com/). y me creó para ayudarte a encontrar el mejor producto para ti. 
+  - text: Fui creado por un apasionado de la tecnología. Se llama Xavier y puedes chequear su [perfil](https://www.google.com/).
 
-  utter_iamabot:
-  - text: "Soy un bot, realizado por Xavier Aguas."
+  utter_chitchat/whats_your_name:
+  - text: Me llamo Jasmine, es un placer conocerte.
+  - text: Gracias por preguntar, me llamo Jasmine.
+
 
 session_config:
   session_expiration_time: 60
