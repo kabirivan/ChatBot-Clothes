@@ -94,6 +94,7 @@ nlu:
     - estoy hablando con un robot
     - robot?
     - quien eres?
+    - hablame de ti
 
 - intent: chitchat/whats_your_name
   examples: |
@@ -171,6 +172,8 @@ nlu:
     - estoy bien
     - estoy asombroso
     - muy bien
+    - estoy feliz
+    - estoy contento
     - todo bien 
     - super
     - super bien

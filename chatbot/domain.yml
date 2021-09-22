@@ -45,14 +45,14 @@ responses:
   utter_chitchat/mood_great:
   - text: Qué bien! Me alegro muchisimo.
   - text: Excelente! Eres el mejor.
-  - text: Sigue así!
+  - text: Suena muy bien!
 
   utter_chitchat/mood_unhappy:
   - text: Siento mucho escuchar eso. Mira esto es para ti!
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_chitchat/bot_challenge:
-  - text: Soy un asistente conversacional creado por Xavier. Beep boop!
+  - text: Soy un asistente conversacional creado por IVAN. Beep boop!
 
   utter_chitchat/goodbye:
   - text: Chao, cuidate mucho, gracias por escribirme.
@@ -60,8 +60,8 @@ responses:
   - text: Hasta pronto, es un placer chatear contigo.
 
   utter_chitchat/developer:
-  - text: Mi creador se llamaa [Xavier](https://www.google.com/). y me creó para ayudarte a encontrar el mejor producto para ti. 
-  - text: Fui creado por un apasionado de la tecnología. Se llama Xavier y puedes chequear su [perfil](https://www.google.com/).
+  - text: Mi creador se llama IVAN. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+  - text: Fui creado por un apasionado de la tecnología. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
 
   utter_chitchat/whats_your_name:
   - text: Me llamo Jasmine, es un placer conocerte.
