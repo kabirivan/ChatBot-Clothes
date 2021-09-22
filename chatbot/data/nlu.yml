@@ -112,3 +112,29 @@ nlu:
     - esta soleado?
     - cual es el pronostico del clima?
     - hace mucho viento afuera?
+
+
+- intent: faq/payment_methods
+  examples: |
+    - que tipos de pagos ofrece?
+    - como puedo pagar?
+    - quiero pagar
+    - alternativas de pago
+    - quiero saber como pagar
+
+- intent: faq/promotions
+  examples: |
+    - que tipo de promociones tienen?
+    - tiene alguna promocion?
+    - tiene descuentos?
+    - descuentos
+    - promociones
+    - existen promociones
+    - existen descuentos
+    - hay rebaja
+    - hay promociones
+    - rebajas
+    - cupones
+    - rebaje
+
+- intent: chitchat/goodbye
