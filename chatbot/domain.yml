@@ -72,6 +72,14 @@ responses:
   - text: Honestamente, en estos días hace mucho calor.
   - text: Digamos que no ha llovido en semanas ☀️ !
 
+  utter_chitchat/ask_wherefrom:
+  - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo.
+  - text: Yo nací en la Mitad del Mundo, Ecuador.
+
+  utter_chitchat/ask_wherefrom:
+  - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo.
+  - text: Yo nací en la Mitad del Mundo, Ecuador.
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
