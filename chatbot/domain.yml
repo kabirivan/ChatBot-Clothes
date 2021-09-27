@@ -60,13 +60,17 @@ responses:
   - text: Hasta pronto, es un placer chatear contigo.
 
   utter_chitchat/developer:
-  - text: Mi creador se llama IVAN. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
-  - text: Fui creado por un apasionado de la tecnología. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+  - text: Mi creador se llama IVAN 🧠. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+  - text: Fui creado por un apasionado de la tecnología 🧠. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
 
   utter_chitchat/whats_your_name:
   - text: Me llamo Jasmine, es un placer conocerte.
   - text: Gracias por preguntar, me llamo Jasmine.
 
+  utter_chitchat/ask_weather:
+  - text: Yo no se donde tu vives, pero en mi mundo siempre es soleado 😅.
+  - text: Honestamente, en estos días hace mucho calor.
+  - text: Digamos que no ha llovido en semanas ☀️ !
 
 session_config:
   session_expiration_time: 60

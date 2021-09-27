@@ -124,6 +124,9 @@ nlu:
     - dime quien te creó
     - dime acerca de tu creadores
     - quien es tu creador
+    - quien es tu papa?
+    - quen es tu mamá?
+     - quen es tu mama
 
 - intent: chitchat/confirm_presence
   examples: |
@@ -191,15 +194,51 @@ nlu:
     - que puedes hacer?
     - de que eres capaz?
 
+- intent: chitchat/ask_weather
+  examples: |
+    - Como es el clima hoy?
+    - como es el clima hoy
+    - clima
+    - está soleado?
+    - está lloviendo?
+    - Cual es el clima de mañana
+    - hace sol
+    - va a llover
+    - está frio?
+    - clima?
+    - llueve?
+    - soleado
+    - esta nevando
+    - que frio
+    - que calor
+
+- intent: chitchat/ask_wherefrom
+  examples: |
+    - donde vives?
+    - donde vives
+    - de donde eres?
+    - de donde eres?
+    - donde naciste?
+    - donde naciste
+    - de donde vienes?
+    - de donde provienes?
+    - de donde vienes?
+    - De que ciudad eres?
+    - de que país eres
+    - Cual es tu origen?
+    - origen?
+    - cuales son tus raices?
+    - cuales son tus raices
+    - en que ciudad fuiste convencido?
+
+
 - intent: out_of_scope
   examples: |
-    - quien es tu creador
     - todo esta bien?
     - te sientes bien?
     - como esta tu dia hoy?
     - como te sientes hoy?
     - estas bien?
-    - como está el clima hoy?
     - esta lloviendo?
     - esta haciendo sol?
     - esta soleado?
