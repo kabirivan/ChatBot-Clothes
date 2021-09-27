@@ -40,7 +40,7 @@ responses:
   - text: Por supesto, cuenta conmigo!
 
   utter_chitchat/capabilities:
-  - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia!
+  - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia de asistencia de compra.
 
   utter_chitchat/mood_great:
   - text: Qué bien! Me alegro muchisimo.
@@ -76,9 +76,8 @@ responses:
   - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo.
   - text: Yo nací en la Mitad del Mundo, Ecuador.
 
-  utter_chitchat/ask_wherefrom:
-  - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo.
-  - text: Yo nací en la Mitad del Mundo, Ecuador.
+  utter_chitchat/ask_time:
+  - text: Es el tiempo más bonito del año.
 
 session_config:
   session_expiration_time: 60
