@@ -1,0 +1,58 @@
+version: "3.9"
+
+x-rasa-credentials: &rasa-credentials
+  TELEGRAM_ACCESS_TOKEN: ${TELEGRAM_ACCESS_TOKEN}
+  TELEGRAM_VERIFY: ${TELEGRAM_VERIFY}
+  TELEGRAM_WEBHOOK_URL: ${TELEGRAM_WEBHOOK_URL}
+
+services:
+  action_server:
+    image: "rasa/rasa-sdk:${RASA_SDK}"
+    expose:
+      - "5055"
+    volumes:        
+      - ./actions:/app/actions      
+
+  rasa:
+    restart: always
+    image: "rasa/rasa:${RASA_VERSION}-full"
+    volumes:
+        - ./.config:/.config
+        - ./actions:/app/actions
+        - ./data:/app/data
+        - ./models:/app/models        
+        - ./domain.yml:/app/domain.yml
+        - ./credentials.yml:/app/credentials.yml 
+        - ./endpoints.yml:/app/endpoints.yml
+        - ./config.yml:/app/config.yml
+        - ./logs:/app/logs
+    expose:
+      - "5005" 
+    ports:
+      - "5005:5005"  
+    environment:
+      <<: *rasa-credentials   
+      RASA_ENVIRONMENT: "production"
+      MPLCONFIGDIR: "/tmp/.matplotlib"    
+    command: >
+      run      
+      --model /app/models
+      --log-file /app/logs/log_file_rasa_core.log  
+      --endpoints /app/endpoints.yml
+      --cors "*"      
+      --debug
+      --port 5005    
+      --credentials /app/credentials.yml          
+    depends_on:
+      - action_server 
+      - duckling     
+
+    
+
+  duckling:
+    container_name: duckling
+    restart: always
+    image: "rasa/duckling:${RASA_DUCKLING_VERSION}"
+    expose:
+      - "8000"        
+    command: ["duckling-example-exe", "--no-access-log", "--no-error-log"]           
