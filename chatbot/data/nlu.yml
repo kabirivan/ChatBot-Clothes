@@ -265,6 +265,21 @@ nlu:
     - cuanto es 5 + 5
     - cual es la raiz cuadrada de 25
 
+- intent: stop
+  examples: |
+    - tu no puedes ayudarme
+    - No estas ayudando
+    - No sirves
+    - Pienso, que no puedes ayudarme
+    - No, eso no quiero
+    - no me sigues
+    - esta conversación no ayuda
+    - para!
+    - detente
+    - stop
+    - no sirves
+    
+
 - intent: request_clothes
   examples: |
     - quiero comprar ropa
