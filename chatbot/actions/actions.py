@@ -11,7 +11,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from algoliasearch.search_client import SearchClient
 
 client = SearchClient.create('BQCT474121', 'b72f4c8a6b93d0afc8221d06c66e1e66')
-index = client.init_index('dev_clothesChildren')
+index = client.init_index('dev_clothes_v2')
 
 
 class ActionHelloWorld(Action):
@@ -67,63 +67,45 @@ class ActionProductSearch(Action):
 
         print(objects)
 
+        clothes = objects['hits']
+
+        product = []
+        for x in clothes:
+            print(x['name'])
+            product.append({'title': x['name'], 'subtitle': "{0}\nStock: {1} disponibles \nPrecio: {2}".format(x['material'], x['quantity'], x['price']), "image_url": x['image'], "buttons": [
+                {
+                    "title": "Comprar",
+                    "url": "https://www.instagram.com/creacionesjasmina/",
+                    "type": "web_url"
+                }
+            ]})
+
         message = {
             "attachment": {
                 "type": "template",
                 "payload": {
                     "template_type": "generic",
-                    "elements": [
-                        {
-                            "title": "Carousel 1",
-                            "subtitle": "$10",
-                            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqhmyBRCngkU_OKSL6gBQxCSH-cufgmZwb2w&usqp=CAU",
-                            "buttons": [
-                                {
-                                    "title": "Happy",
-                                    "payload": "Happy",
-                                    "type": "postback"
-                                },
-                                {
-                                    "title": "sad",
-                                    "payload": "sad",
-                                    "type": "postback"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Carousel 2",
-                            "subtitle": "$12",
-                            "image_url": "https://image.freepik.com/free-vector/city-illustration_23-2147514701.jpg",
-                            "buttons": [
-                                {
-                                    "title": "Click here",
-                                    "url": "https://image.freepik.com/free-vector/city-illustration_23-2147514701.jpg",
-                                    "type": "web_url"
-                                }
-                            ]
-                        }
-                    ]
+                    "elements": product
                 }
             }
         }
-        dispatcher.utter_message(json_message=message)
-        # dispatcher.utter_message(json_message=message)
 
-        # if message:
-        #     # provide in stock message
-        #     text = (
-        #         f"Tenemos algunos productos que te pueden interesar"
-        #     )
-        #     dispatcher.utter_message(response=message)
 
-        #     slots_to_reset = ["gender", "number", "color", "category"]
-        #     return [SlotSet(slot, None) for slot in slots_to_reset]
-        # else:
-        #     # provide out of stock
-        #     text = (
-        #         f"No disponemos de ese producto en específico. Pero puedes seguir buscando"
-        #     )
-        #     dispatcher.utter_message(text=text)
+        if clothes:
+            # provide in stock message
+            text = (
+                f"Tenemos algunos productos que te pueden interesar"
+            )
+            dispatcher.utter_message(json_message=message)
 
-        #     slots_to_reset = ["gender", "number", "color", "category"]
-        #     return [SlotSet(slot, None) for slot in slots_to_reset]
+            slots_to_reset = ["gender", "number", "color", "category"]
+            return [SlotSet(slot, None) for slot in slots_to_reset]
+        else:
+            # provide out of stock
+            text = (
+                f"No disponemos de ese producto en específico. Pero puedes seguir buscando"
+            )
+            dispatcher.utter_message(text=text)
+
+            slots_to_reset = ["gender", "number", "color", "category"]
+            return [SlotSet(slot, None) for slot in slots_to_reset]

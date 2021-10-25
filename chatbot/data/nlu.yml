@@ -351,6 +351,17 @@ nlu:
     - que tienes?
     - que vendes?
     - que ropa tienes?
+    - 8 años
+    - 3 años
+    - 4 años
+    - 2 anos
+    - 3 anos
+    - 3 anos
+    - 4
+    - 5
+    - 3
+    - 2
+
 
 - intent: inform
   examples: |
@@ -364,9 +375,14 @@ nlu:
     - quiero ropa de color [fucsia](color)
     - quiero ropa de color [lila](color)
     - quiero ropa de color [negro](color)
-    - quiero ropa de color [negro](color)
+    - quiero ropa de color [morado](color)
     - tiene ropa de [niño](gender)
     - tiene ropa de [niña](gender)
     - [azul](color)
     - [amarillo](color)
     - [negro](color)
+    - [mostaza](color)
+    - [fucsia](color)
+    - [lila](color)
+    - [morado](color)
+    - [palo de rosa](color)
