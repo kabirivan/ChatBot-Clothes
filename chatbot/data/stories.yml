@@ -5,7 +5,7 @@ stories:
 - story: happy path
   steps:
   - intent: greet
-  - action: action_product_search
+  - action: utter_greet
 
 - story: search clothes form + continue
   steps:

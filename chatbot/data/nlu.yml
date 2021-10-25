@@ -180,6 +180,7 @@ nlu:
     - super
     - super bien
     - perfecto
+    - buen
 
 - intent: chitchat/capabilities
   examples: |
@@ -285,6 +286,10 @@ nlu:
     - quiero comprar ropa
     - quiero comprar ropa de [niño](gender)
     - quiero comprar ropa de [niña](gender)
+    - quiero comprar ropa de [nino](gender)
+    - quiero comprar ropa de [nina](gender)
+    - ropa de [nino](gender)
+    - ropa de [nina](gender)
     - me gustaria comprar
     - me gustaria comprar [pantalones](category) para [niñas](gender)
     - me gustaria comprar [pantalones](category)
@@ -346,6 +351,8 @@ nlu:
     - ropa de [niña](gender) para cuatro años
     - quiero comprar ropa de [niña](gender) para cinco años
     - quiero comprar ropa de [niña](gender) para seis años
+    - quiero comprar ropa de [niño](gender) de color [negro](color) para seis años
+    - quiero comprar ropa de [niño](gender) de color [rojo](color) para seis años
     - me gustaría comprar ropa de ropa de [niña](gender) para siete años
     - ropa de [niña](gender) para ocho años
     - que tienes?
@@ -376,6 +383,7 @@ nlu:
     - quiero ropa de color [lila](color)
     - quiero ropa de color [negro](color)
     - quiero ropa de color [morado](color)
+    - quiero ropa de color [plomo](color)
     - tiene ropa de [niño](gender)
     - tiene ropa de [niña](gender)
     - [azul](color)
@@ -386,3 +394,7 @@ nlu:
     - [lila](color)
     - [morado](color)
     - [palo de rosa](color)
+    - [plomo](color)
+    - [verde](color)
+    - [celeste](color)
+    - [beige](color)
