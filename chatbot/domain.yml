@@ -1,4 +1,4 @@
-version: "2.0"
+version: '2.0'
 
 intents:
   - greet
@@ -35,149 +35,147 @@ slots:
     type: text
     influence_conversation: false
 
-
 responses:
   utter_greet:
-  - text: "Hola! Como estás?"
+    - text: 'Hola! Como estás?'
 
   utter_default:
-  - text: Lo siento, pero no te entendí 😭. ¿Puedes repetírmelo?
-  - text: Ummm, qué me acabas de decir? 🤔
-  - text: beep, boop! 😵 No entiendo lo que me quieres decir!
+    - text: Lo siento, pero no te entendí 😭. ¿Puedes repetírmelo?
+    - text: Ummm, qué me acabas de decir? 🤔
+    - text: beep, boop! 😵 No entiendo lo que me quieres decir!
 
   utter_faq/sizing_clarification:
-  - text: Quiero mencionarte que en Creaciones Jasmin manejamos tallas americanas para confeccionar la ropa para niñ@s. 
-  
+    - text: Quiero mencionarte que en Creaciones Jasmin manejamos tallas americanas para confeccionar la ropa para niñ@s.
+
   utter_faq/payment_methods:
-  - text: Muy buena pregunta! Nosotros aceptamos transferencias, tarjetas de crédito, depositos y efectivo. Así que no te preocupes tenemos varias alternativas de pago.
+    - text: Muy buena pregunta! Nosotros aceptamos transferencias, tarjetas de crédito, depositos y efectivo. Así que no te preocupes tenemos varias alternativas de pago.
 
   utter_faq/promotions:
-  - text: Lo siento, actualmente no tenemos promociones, pero el proximo mes tendremos descuentos de haste el 50%. Así que mantente alerta!
+    - text: Lo siento, actualmente no tenemos promociones, pero el proximo mes tendremos descuentos de haste el 50%. Así que mantente alerta!
 
   utter_chitchat/thanks:
-  - text: Con mucho gusto.
-  - text: Es un placer 🥰.
-  - text: De nada, cuenta conmigo 😉.
-  - text: Lo hacemos con mucho cariño ❤️.
+    - text: Con mucho gusto.
+    - text: Es un placer 🥰.
+    - text: De nada, cuenta conmigo 😉.
+    - text: Lo hacemos con mucho cariño ❤️.
 
   utter_chitchat/confirm_presence:
-  - text: Sí, aquí estoy 👍🏻!
-  - text: Te estoy escuchando 👂🏻!
-  - text: Claro, estoy siempre listo para atenderte 🤓.
-  - text: Por supesto, cuenta conmigo 🤝!
+    - text: Sí, aquí estoy 👍🏻!
+    - text: Te estoy escuchando 👂🏻!
+    - text: Claro, estoy siempre listo para atenderte 🤓.
+    - text: Por supesto, cuenta conmigo 🤝!
 
   utter_chitchat/capabilities:
-  - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia de asistencia de compra 🤓.
+    - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia de asistencia de compra 🤓.
 
   utter_chitchat/mood_great:
-  - text: Qué bien! Me alegro muchisimo 😁.
-  - text: Excelente! Eres el mejor 😄.
+    - text: Qué bien! Me alegro muchisimo 😁.
+    - text: Excelente! Eres el mejor 😄.
 
   utter_chitchat/mood_unhappy:
-  - text: Siento mucho escuchar eso 😰. Mira esto es para ti!
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: Siento mucho escuchar eso 😰. Mira esto es para ti!
+      image: 'https://i.imgur.com/nGF1K8f.jpg'
 
   utter_chitchat/bot_challenge:
-  - text: Soy un asistente conversacional 👩🏻‍🦰 creado por IVAN. Beep boop!
+    - text: Soy un asistente conversacional 👩🏻‍🦰 creado por IVAN. Beep boop!
 
   utter_chitchat/goodbye:
-  - text: Chao, cuidate mucho, gracias por escribirme 😊. 
-  - text: Hasta luego, es un placer atenderte ☺️.
-  - text: Hasta pronto, es un placer chatear contigo 🤗.
+    - text: Chao, cuidate mucho, gracias por escribirme 😊.
+    - text: Hasta luego, es un placer atenderte ☺️.
+    - text: Hasta pronto, es un placer chatear contigo 🤗.
 
   utter_chitchat/developer:
-  - text: Mi creador se llama IVAN 👨🏻‍💻. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
-  - text: Fui creado por un apasionado de la tecnología 👨🏻‍💻. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+    - text: Mi creador se llama IVAN 👨🏻‍💻. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+    - text: Fui creado por un apasionado de la tecnología 👨🏻‍💻. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
 
   utter_chitchat/whats_your_name:
-  - text: Me llamo Jasmine 👩🏻‍🦰, es un placer conocerte.
-  - text: Gracias por preguntar, me llamo Jasmine 👩🏻‍🦰.
+    - text: Me llamo Jasmine 👩🏻‍🦰, es un placer conocerte.
+    - text: Gracias por preguntar, me llamo Jasmine 👩🏻‍🦰.
 
   utter_chitchat/ask_weather:
-  - text: Yo no se donde tu vives, pero en mi mundo siempre es soleado 😅.
-  - text: Honestamente, en estos días hace mucho calor 😎.
-  - text: Digamos que no ha llovido en semanas ☀️!
+    - text: Yo no se donde tu vives, pero en mi mundo siempre es soleado 😅.
+    - text: Honestamente, en estos días hace mucho calor 😎.
+    - text: Digamos que no ha llovido en semanas ☀️!
 
   utter_chitchat/ask_wherefrom:
-  - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo 🌎.
-  - text: Yo nací en la Mitad del Mundo, Ecuador 🇪🇨.
+    - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo 🌎.
+    - text: Yo nací en la Mitad del Mundo, Ecuador 🇪🇨.
 
   utter_chitchat/ask_time:
-  - text: Es el tiempo más bonito del año 🌇.
+    - text: Es el tiempo más bonito del año 🌇.
 
   utter_ask_continue:
-    - text: "¿Quiéres continuar? 🤔"
-  
+    - text: '¿Quiéres continuar? 🤔'
+
   utter_submit:
-  - text: "Perfecto! Eso es todo 🤓."
+    - text: 'Perfecto! Eso es todo 🤓.'
 
   utter_slots_values:
-  - text: "Voy a buscar en nuestro stock con los siguientes parametros:\n
-            - Ropa de: {gender}\n
-            - Categoria: {category}\n
-            - Edad: {number}\n
-            - Color: {color}\n
-            - Preferencias: {preferences}\n"
-            
+    - text: "Voy a buscar en nuestro stock con los siguientes parametros:\n
+        - Ropa de: {gender}\n
+        - Categoria: {category}\n
+        - Edad: {number}\n
+        - Color: {color}\n
+        - Preferencias: {preferences}\n"
+
   utter_ask_gender:
     - text: ¿Para que chiquitín buscas la ropa?
       buttons:
-      - title: Niña 👧🏻
-        payload: '/request_clothes{{"gender":"niña"}}'
-      - title: Niño 👦🏻
-        payload: '/request_clothes{{"gender":"niño"}}'
+        - title: Niña 👧🏻
+          payload: '/request_clothes{{"gender":"niña"}}'
+        - title: Niño 👦🏻
+          payload: '/request_clothes{{"gender":"niño"}}'
 
   utter_ask_category:
-    - text: "Contamos con distintos tipos de ropa, como:"
+    - text: 'Contamos con distintos tipos de ropa, como:'
       buttons:
-      - title: Pantalones Licra 👖
-        payload: '/request_clothes{{"category":"pantalones"}}'
-      - title: Busos 👕
-        payload: '/request_clothes{{"category":"busos"}}'
-      - title: Blusas 👚
-        payload: '/request_clothes{{"category":"blusas"}}'
+        - title: Pantalones Licra 👖
+          payload: '/request_clothes{{"category":"pantalones"}}'
+        - title: Busos 👕
+          payload: '/request_clothes{{"category":"busos"}}'
+        - title: Blusas 👚
+          payload: '/request_clothes{{"category":"blusas"}}'
 
   utter_ask_number:
-    - text: "¿Para que edad buscas la ropa de {gender}?"
+    - text: '¿Para que edad buscas la ropa de {gender}?'
 
   utter_ask_color:
-    - text: "¿Algún color en particular 🎨?"
+    - text: '¿Algún color en particular 🎨?'
 
   utter_ask_preferences:
     - text: ¿Algo adicional que quieras mencionarnos 📝?
 
-
 forms:
   clothes_form:
     ignored_intents:
-    - chichat
-    - faq
+      - chichat
+      - faq
     required_slots:
       gender:
-      - type: from_entity
-        entity: gender
-        intent: [inform, request_clothes]
+        - type: from_entity
+          entity: gender
+          intent: [inform, request_clothes]
       category:
-      - type: from_entity
-        entity: category
-        intent: [inform, request_clothes]
+        - type: from_entity
+          entity: category
+          intent: [inform, request_clothes]
       number:
-      - type: from_entity
-        entity: number
-        intent: [inform, request_clothes]
+        - type: from_entity
+          entity: number
+          intent: [inform, request_clothes]
       color:
-      - type: from_entity
-        entity: color
-        intent: [inform, request_clothes]
+        - type: from_entity
+          entity: color
+          intent: [inform, request_clothes]
       preferences:
-      - type: from_intent
-        intent: deny
-        value: No hay preferencias adicionales
-      - type: from_text
-        not_intent: affirm
+        - type: from_intent
+          intent: deny
+          value: No hay preferencias adicionales
+        - type: from_text
+          not_intent: affirm
 
 actions:
-- action_product_search
+  - action_product_search
 
 session_config:
   session_expiration_time: 60
