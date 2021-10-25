@@ -11,6 +11,25 @@ intents:
   - inform
   - request_clothes
 
+entities:
+  - category
+  - number
+  - color
+  - gender
+
+slots:
+  category:
+    type: text
+    influence_conversation: false
+  number:
+    type: float
+    influence_conversation: false
+  color:
+    type: text
+    influence_conversation: false
+  gender:
+    type: text
+    influence_conversation: false
 
 
 
@@ -85,29 +104,34 @@ responses:
   - text: Es el tiempo más bonito del año.
 
 
+
 forms:
   clothes_form:
     ignored_intents:
     - chichat
     - faq
     required_slots:
-    category:
-    - type: from_entity
-      entity: category
-    number:
-    - type: from_entity
-      entity: number
-      intent: [inform, request_clothes]
-    color:
-    - type: from_entity
-      entity: color
-      intent: [inform, request_clothes]
-    preferences:
-    - type: from_intent
-      intent: deny
-      value: No hay preferencias adicionales
-    - type: from_text
-      not_intent: affirm
+      category:
+      - type: from_entity
+        entity: category
+      gender:
+      - type: from_entity
+        entity: gender
+        intent: [inform, request_clothes]
+      number:
+      - type: from_entity
+        entity: number
+        intent: [inform, request_clothes]
+      color:
+      - type: from_entity
+        entity: color
+        intent: [inform, request_clothes]
+      preferences:
+      - type: from_intent
+        intent: deny
+        value: No hay preferencias adicionales
+      - type: from_text
+        not_intent: affirm
 
 
 session_config:
