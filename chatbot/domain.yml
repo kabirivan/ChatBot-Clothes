@@ -11,6 +11,9 @@ intents:
   - inform
   - request_clothes
 
+
+
+
 responses:
   utter_greet:
   - text: "Hola! Como estás?"
@@ -80,6 +83,32 @@ responses:
 
   utter_chitchat/ask_time:
   - text: Es el tiempo más bonito del año.
+
+
+forms:
+  clothes_form:
+    ignored_intents:
+    - chichat
+    - faq
+    required_slots:
+    category:
+    - type: from_entity
+      entity: category
+    number:
+    - type: from_entity
+      entity: number
+      intent: [inform, request_clothes]
+    color:
+    - type: from_entity
+      entity: color
+      intent: [inform, request_clothes]
+    preferences:
+    - type: from_intent
+      intent: deny
+      value: No hay preferencias adicionales
+    - type: from_text
+      not_intent: affirm
+
 
 session_config:
   session_expiration_time: 60

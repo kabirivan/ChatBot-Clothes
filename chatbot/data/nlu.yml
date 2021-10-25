@@ -126,7 +126,6 @@ nlu:
     - quien es tu creador
     - quien es tu papa?
     - quen es tu mamá?
-     - quen es tu mama
 
 - intent: chitchat/confirm_presence
   examples: |
@@ -286,54 +285,54 @@ nlu:
     - puedo ver la ropa que vendes
     - ropa de [niño](gender)
     - ropa de [niña](gender)
-    - ropa de [niño](gender) de [3](age) años
-    - me gustaría comprar ropa de [niño](gender) de [4](age) años
-    - me gustaría comprar ropa de [niño](gender) de [5](age) años
-    - me gustaría comprar ropa de [niño](gender) de [6](age) años
-    - ropa de [niño](gender) de [7](age) años
-    - ropa de [niño](gender) de [8](age) años
-    - ropa de [niña](gender) de [3](age) años
-    - ropa de [niña](gender) de [4](age) años
-    - ropa de [niña](gender) de [5](age) años
-    - ropa de [niña](gender) de [6](age) años
-    - ropa de [niña](gender) de [7](age) años
-    - ropa de [niña](gender) de [8](age) años
-    - ropa de [niño](gender) de [tres](age) años
-    - ropa de [niño](gender) de [cuatro](age) años
-    - ropa de [niño](gender) de [cinco](age) años
-    - me gustaría comprar ropa de [niño](gender) de [seis](age) años
-    - me gustaría comprar ropa de [niño](gender) de [siete](age) años
-    - me gustaría comprar ropa de [niño](gender) de [ocho](age) años
-    - ropa de [niña](gender) de [tres](age) años
-    - ropa de [niña](gender) de [cuatro](age) años
-    - ropa de [niña](gender) de [cinco](age) años
-    - ropa de [niña](gender) de [seis](age) años
-    - ropa de [niña](gender) de [siete](age) años
-    - ropa de [niña](gender) de [ocho](age) años
-    - ropa de [niño](gender) para [3](age) años
-    - ropa de [niño](gender) para [4](age) años
-    - quiero comprar ropa de [niño](gender) para [5](age) años
-    - quiero comprar ropa de [niño](gender) para [6](age) años
-    - quiero comprar ropa de [niño](gender) para [7](age) años
-    - quiero comprar ropa de [niño](gender) para [8](age) años
-    - ropa de [niña](gender) para [3](age) años
-    - ropa de [niña](gender) para [4](age) años
-    - ropa de [niña](gender) para [5](age) años
-    - quiero comprar ropa de [niña](gender) para [6](age) años
-    - quiero comprar ropa de [niña](gender) para [7](age) años
-    - ropa de [niña](gender) para [8](age) años
-    - me gustaría comprar ropa de ropa de [niño](gender) para [tres](age) años
-    - ropa de [niño](gender) para [cuatro](age) años
-    - quiero comprar ropa de [niño](gender) para [cinco](age) años
-    - quiero comprar ropa de [niño](gender) para [seis](age) años
-    - ropa de [niño](gender) para [siete](age) años
-    - ropa de [niño](gender) para [ocho](age) años
-    - ropa de [niña](gender) para [tres](age) años
-    - ropa de [niña](gender) para [cuatro](age) años
-    - quiero comprar ropa de [niña](gender) para [cinco](age) años
-    - quiero comprar ropa de [niña](gender) para [seis](age) años
-    - me gustaría comprar ropa de ropa de [niña](gender) para [siete](age) años
-    - ropa de [niña](gender) para [ocho](age) años
+    - ropa de [niño](gender) de [3](number) años
+    - me gustaría comprar ropa de [niño](gender) de [4](number) años
+    - me gustaría comprar ropa de [niño](gender) de [5](number) años
+    - me gustaría comprar ropa de [niño](gender) de [6](number) años
+    - ropa de [niño](gender) de [7](number) años
+    - ropa de [niño](gender) de [8](number) años
+    - ropa de [niña](gender) de [3](number) años
+    - ropa de [niña](gender) de [4](number) años
+    - ropa de [niña](gender) de [5](number) años
+    - ropa de [niña](gender) de [6](number) años
+    - ropa de [niña](gender) de [7](number) años
+    - ropa de [niña](gender) de [8](number) años
+    - ropa de [niño](gender) de [tres](number) años
+    - ropa de [niño](gender) de [cuatro](number) años
+    - ropa de [niño](gender) de [cinco](number) años
+    - me gustaría comprar ropa de [niño](gender) de [seis](number) años
+    - me gustaría comprar ropa de [niño](gender) de [siete](number) años
+    - me gustaría comprar ropa de [niño](gender) de [ocho](number) años
+    - ropa de [niña](gender) de [tres](number) años
+    - ropa de [niña](gender) de [cuatro](number) años
+    - ropa de [niña](gender) de [cinco](number) años
+    - ropa de [niña](gender) de [seis](number) años
+    - ropa de [niña](gender) de [siete](number) años
+    - ropa de [niña](gender) de [ocho](number) años
+    - ropa de [niño](gender) para [3](number) años
+    - ropa de [niño](gender) para [4](number) años
+    - quiero comprar ropa de [niño](gender) para [5](number) años
+    - quiero comprar ropa de [niño](gender) para [6](number) años
+    - quiero comprar ropa de [niño](gender) para [7](number) años
+    - quiero comprar ropa de [niño](gender) para [8](number) años
+    - ropa de [niña](gender) para [3](number) años
+    - ropa de [niña](gender) para [4](number) años
+    - ropa de [niña](gender) para [5](number) años
+    - quiero comprar ropa de [niña](gender) para [6](number) años
+    - quiero comprar ropa de [niña](gender) para [7](number) años
+    - ropa de [niña](gender) para [8](number) años
+    - me gustaría comprar ropa de ropa de [niño](gender) para [tres](number) años
+    - ropa de [niño](gender) para [cuatro](number) años
+    - quiero comprar ropa de [niño](gender) para [cinco](number) años
+    - quiero comprar ropa de [niño](gender) para [seis](number) años
+    - ropa de [niño](gender) para [siete](number) años
+    - ropa de [niño](gender) para [ocho](number) años
+    - ropa de [niña](gender) para [tres](number) años
+    - ropa de [niña](gender) para [cuatro](number) años
+    - quiero comprar ropa de [niña](gender) para [cinco](number) años
+    - quiero comprar ropa de [niña](gender) para [seis](number) años
+    - me gustaría comprar ropa de ropa de [niña](gender) para [siete](number) años
+    - ropa de [niña](gender) para [ocho](number) años
     - que tienes?
     - que vendes?
     - que ropa tienes?
