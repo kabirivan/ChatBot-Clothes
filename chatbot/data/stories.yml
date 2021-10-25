@@ -7,7 +7,7 @@ stories:
   - intent: greet
   - action: utter_greet
 
-- story: search clothes form
+- story: search clothes form + continue
   steps:
   - intent: request_clothes
   - action: clothes_form
@@ -19,3 +19,14 @@ stories:
   - active_loop: null
   - action: utter_submit
   - action: utter_slots_values
+
+- story: search clothes form + stop
+  steps:
+  - intent: request_clothes
+  - action: clothes_form
+  - active_loop: clothes_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
