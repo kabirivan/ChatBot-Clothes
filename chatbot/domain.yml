@@ -109,8 +109,16 @@ responses:
     - text: "¿Quiéres continuar? 🤔"
   
   utter_submit:
-  - text: "Perfecto! Voy a buscar tus requerimientos 🤓. "
+  - text: "Perfecto! Eso es todo 🤓."
 
+  utter_slots_values:
+  - text: "Voy a buscar en nuestro stock siguiendo los siguientes parametros:\n
+            - Ropa de: {gender}\n
+            - Categoria: {category}\n
+            - Edad: {number}\n
+            - Color: {color}\n
+            - Preferencias: {preferences}\n"
+            
   utter_ask_gender:
     - text: ¿Para que chiquitín buscas la ropa?
       buttons:
@@ -118,6 +126,7 @@ responses:
         payload: /inform{"gender":"niña"}'
       - title: Niño 👦🏻
         payload: /inform{"gender":"niño"}'
+
   utter_ask_category:
     - text: "Contamos con distintos tipos de ropa, como:"
       buttons:
@@ -127,10 +136,13 @@ responses:
         payload: /inform{"gender":"buso"}'
       - title: Blusas 👚
         payload: /inform{"gender":"blusa"}'
+
   utter_ask_number:
     - text: "¿Para que edad buscas la ropa de {gender}?"
+
   utter_ask_color:
     - text: "¿Algún color en particular 🎨?"
+    
   utter_ask_preferences:
     - text: ¿Algo adicional que quieras mencionarnos 📝?
 
