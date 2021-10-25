@@ -113,7 +113,7 @@ responses:
   - text: "Perfecto! Eso es todo 🤓."
 
   utter_slots_values:
-  - text: "Voy a buscar en nuestro stock siguiendo los siguientes parametros:\n
+  - text: "Voy a buscar en nuestro stock con los siguientes parametros:\n
             - Ropa de: {gender}\n
             - Categoria: {category}\n
             - Edad: {number}\n
@@ -132,11 +132,11 @@ responses:
     - text: "Contamos con distintos tipos de ropa, como:"
       buttons:
       - title: Pantalones Licra 👖
-        payload: '/request_clothes{{"gender":"pantalones"}}'
+        payload: '/request_clothes{{"category":"pantalones"}}'
       - title: Busos 👕
-        payload: '/request_clothes{{"gender":"buso"}}'
+        payload: '/request_clothes{{"category":"buso"}}'
       - title: Blusas 👚
-        payload: '/request_clothes{{"gender":"blusa"}}'
+        payload: '/request_clothes{{"category":"blusa"}}'
 
   utter_ask_number:
     - text: "¿Para que edad buscas la ropa de {gender}?"
