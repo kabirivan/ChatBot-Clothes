@@ -43,19 +43,25 @@ class ActionProductSearch(Action):
         clothes = [tracker.get_slot("gender"), tracker.get_slot(
             "number"), tracker.get_slot("category"), tracker.get_slot("color")]
 
+        if clothes[0] == 'niño':
+            clothes[0] = 'M'
+        else:
+            clothes[0] = 'F'
+            
+        print(clothes)
         objects = index.search("", {
             "facetFilters": [
                 [
-                    "gender:{0[1]}".format(clothes)
+                    "gender:{0[0]}".format(clothes)
                 ],
                 [
-                    "age:{0[2]}".format(clothes)
+                    "age:{0[1]}".format(clothes)
                 ],
                 [
-                    "category:{0[3]}".format(clothes)
+                    "category:{0[2]}".format(clothes)
                 ],
                 [
-                    "color:{0[4]}".format(clothes)
+                    "color:{0[3]}".format(clothes)
                 ],
             ]
         })

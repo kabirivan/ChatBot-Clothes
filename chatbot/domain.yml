@@ -133,9 +133,9 @@ responses:
       - title: Pantalones Licra 👖
         payload: '/request_clothes{{"category":"pantalones"}}'
       - title: Busos 👕
-        payload: '/request_clothes{{"category":"buso"}}'
+        payload: '/request_clothes{{"category":"busos"}}'
       - title: Blusas 👚
-        payload: '/request_clothes{{"category":"blusa"}}'
+        payload: '/request_clothes{{"category":"blusas"}}'
 
   utter_ask_number:
     - text: "¿Para que edad buscas la ropa de {gender}?"
