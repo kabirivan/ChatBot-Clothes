@@ -3,6 +3,7 @@ version: "2.0"
 intents:
   - greet
   - affirm
+  - stop
   - deny
   - chitchat
   - faq
@@ -37,7 +38,7 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hola! Como estás? 👋🏻"
+  - text: "Hola! Como estás?"
 
   utter_default:
   - text: Lo siento, pero no te entendí 😭. ¿Puedes repetírmelo?
@@ -142,7 +143,7 @@ responses:
 
   utter_ask_color:
     - text: "¿Algún color en particular 🎨?"
-    
+
   utter_ask_preferences:
     - text: ¿Algo adicional que quieras mencionarnos 📝?
 
