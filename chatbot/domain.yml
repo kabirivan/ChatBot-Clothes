@@ -124,9 +124,9 @@ responses:
     - text: ¿Para que chiquitín buscas la ropa?
       buttons:
       - title: Niña 👧🏻
-        payload: /inform{"gender":"niña"}'
+        payload: '/request_clothes{{"gender":"niña"}}'
       - title: Niño 👦🏻
-        payload: /inform{"gender":"niño"}'
+        payload: '/request_clothes{{"gender":"niño"}}'
 
   utter_ask_category:
     - text: "Contamos con distintos tipos de ropa, como:"
