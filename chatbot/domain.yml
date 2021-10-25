@@ -132,11 +132,11 @@ responses:
     - text: "Contamos con distintos tipos de ropa, como:"
       buttons:
       - title: Pantalones Licra 👖
-        payload: '/inform{{"gender":"pantalones"}}'
+        payload: '/request_clothes{{"gender":"pantalones"}}'
       - title: Busos 👕
-        payload: '/inform{{"gender":"buso"}}'
+        payload: '/request_clothes{{"gender":"buso"}}'
       - title: Blusas 👚
-        payload: '/inform{{"gender":"blusa"}}'
+        payload: '/request_clothes{{"gender":"blusa"}}'
 
   utter_ask_number:
     - text: "¿Para que edad buscas la ropa de {gender}?"
