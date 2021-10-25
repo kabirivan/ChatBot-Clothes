@@ -334,6 +334,9 @@ nlu:
     - quiero comprar ropa de [niña](gender) para [seis](age) años
     - me gustaría comprar ropa de ropa de [niña](gender) para [siete](age) años
     - ropa de [niña](gender) para [ocho](age) años
+    - que tienes?
+    - que vendes?
+    - que ropa tienes?
 
 - intent: inform
   examples: |

@@ -8,6 +8,8 @@ intents:
   - faq
   - out_of_scope
   - nlu_fallback
+  - inform
+  - request_clothes
 
 responses:
   utter_greet:
