@@ -30,17 +30,19 @@ slots:
   gender:
     type: text
     influence_conversation: false
-
+  preferences:
+    type: text
+    influence_conversation: false
 
 
 responses:
   utter_greet:
-  - text: "Hola! Como estás?"
+  - text: "Hola! Como estás? 👋🏻"
 
   utter_default:
-  - text: Lo siento, pero no te entendí. ¿Puedes repetírmelo?
-  - text: Ummm, qué me acabas de decir?
-  - text: beep, boop! No entiendo lo que me quieres decir!
+  - text: Lo siento, pero no te entendí 😭. ¿Puedes repetírmelo?
+  - text: Ummm, qué me acabas de decir? 🤔
+  - text: beep, boop! 😵 No entiendo lo que me quieres decir!
 
   utter_faq/sizing_clarification:
   - text: Quiero mencionarte que en Creaciones Jasmin manejamos tallas americanas para confeccionar la ropa para niñ@s. 
@@ -53,56 +55,84 @@ responses:
 
   utter_chitchat/thanks:
   - text: Con mucho gusto.
-  - text: Es un placer.
-  - text: De nada, cuenta conmigo.
-  - text: Lo hacemos con mucho cariño.
+  - text: Es un placer 🥰.
+  - text: De nada, cuenta conmigo 😉.
+  - text: Lo hacemos con mucho cariño ❤️.
 
   utter_chitchat/confirm_presence:
-  - text: Sí, aquí estoy!
-  - text: Te estoy escuchando!
-  - text: Claro, estoy siempre listo para atenderte.
-  - text: Por supesto, cuenta conmigo!
+  - text: Sí, aquí estoy 👍🏻!
+  - text: Te estoy escuchando 👂🏻!
+  - text: Claro, estoy siempre listo para atenderte 🤓.
+  - text: Por supesto, cuenta conmigo 🤝!
 
   utter_chitchat/capabilities:
-  - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia de asistencia de compra.
+  - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia de asistencia de compra 🤓.
 
   utter_chitchat/mood_great:
-  - text: Qué bien! Me alegro muchisimo.
-  - text: Excelente! Eres el mejor.
+  - text: Qué bien! Me alegro muchisimo 😁.
+  - text: Excelente! Eres el mejor 😄.
   - text: Suena muy bien!
 
   utter_chitchat/mood_unhappy:
-  - text: Siento mucho escuchar eso. Mira esto es para ti!
+  - text: Siento mucho escuchar eso 😰. Mira esto es para ti!
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_chitchat/bot_challenge:
-  - text: Soy un asistente conversacional creado por IVAN. Beep boop!
+  - text: Soy un asistente conversacional 👩🏻‍🦰 creado por IVAN. Beep boop!
 
   utter_chitchat/goodbye:
-  - text: Chao, cuidate mucho, gracias por escribirme.
-  - text: Hasta luego, es un placer atenderte.
-  - text: Hasta pronto, es un placer chatear contigo.
+  - text: Chao, cuidate mucho, gracias por escribirme 😊. 
+  - text: Hasta luego, es un placer atenderte ☺️.
+  - text: Hasta pronto, es un placer chatear contigo 🤗.
 
   utter_chitchat/developer:
-  - text: Mi creador se llama IVAN 🧠. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
-  - text: Fui creado por un apasionado de la tecnología 🧠. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+  - text: Mi creador se llama IVAN 👨🏻‍💻. y me creó para ayudarte a encontrar el mejor producto para ti. Puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
+  - text: Fui creado por un apasionado de la tecnología 👨🏻‍💻. Se llama IVAN y puedes chequear su perfil --> https://www.linkedin.com/in/xavier-iv%C3%A1n-aguas-5764b5133/.
 
   utter_chitchat/whats_your_name:
-  - text: Me llamo Jasmine, es un placer conocerte.
-  - text: Gracias por preguntar, me llamo Jasmine.
+  - text: Me llamo Jasmine 👩🏻‍🦰, es un placer conocerte.
+  - text: Gracias por preguntar, me llamo Jasmine 👩🏻‍🦰.
 
   utter_chitchat/ask_weather:
   - text: Yo no se donde tu vives, pero en mi mundo siempre es soleado 😅.
-  - text: Honestamente, en estos días hace mucho calor.
-  - text: Digamos que no ha llovido en semanas ☀️ !
+  - text: Honestamente, en estos días hace mucho calor 😎.
+  - text: Digamos que no ha llovido en semanas ☀️!
 
   utter_chitchat/ask_wherefrom:
-  - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo.
-  - text: Yo nací en la Mitad del Mundo, Ecuador.
+  - text: Yo nací en Ecuador, pero me considero ciudadano de todo el mundo 🌎.
+  - text: Yo nací en la Mitad del Mundo, Ecuador 🇪🇨.
 
   utter_chitchat/ask_time:
-  - text: Es el tiempo más bonito del año.
+  - text: Es el tiempo más bonito del año 🌇.
 
+  utter_ask_continue:
+    - text: "¿Quiéres continuar? 🤔"
+  
+  utter_submit:
+  - text: "Perfecto! Voy a buscar tus requerimientos 🤓. "
+
+  utter_ask_gender:
+    - text: ¿Para que chiquitín buscas la ropa?
+      buttons:
+      - title: Niña 👧🏻
+        payload: /inform{"gender":"niña"}'
+      - title: Niño 👦🏻
+        payload: /inform{"gender":"niño"}'
+  utter_ask_category:
+    - text: "Contamos con distintos tipos de ropa, como:"
+      buttons:
+      - title: Pantalones Licra 👖
+        payload: /inform{"gender":"pantalones"}'
+      - title: Busos 👕
+        payload: /inform{"gender":"buso"}'
+      - title: Blusas 👚
+        payload: /inform{"gender":"blusa"}'
+  utter_ask_number:
+    - text: "¿Para que edad buscas la ropa de {gender}?"
+  utter_ask_color:
+    - text: "¿Algún color en particular 🎨?"
+  utter_ask_preferences:
+    - text: ¿Algo adicional que quieras mencionarnos 📝?
 
 
 forms:
@@ -111,13 +141,13 @@ forms:
     - chichat
     - faq
     required_slots:
-      category:
-      - type: from_entity
-        entity: category
       gender:
       - type: from_entity
         entity: gender
         intent: [inform, request_clothes]
+      category:
+      - type: from_entity
+        entity: category
       number:
       - type: from_entity
         entity: number
