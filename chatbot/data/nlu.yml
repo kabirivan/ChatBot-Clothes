@@ -335,7 +335,21 @@ nlu:
     - me gustaría comprar ropa de ropa de [niña](gender) para [siete](age) años
     - ropa de [niña](gender) para [ocho](age) años
 
-- intent: request_clothes
+- intent: inform
   examples: |
-    - quiero comprar ropa
-    - quiero comprar ropa de [niño](gender)
+    - muestrame ropa [niña](gender)
+    - muestrame ropa [niño](gender)
+    - muestrame ropa de color [azul](color)
+    - muestrame ropa de color [amarillo](color)
+    - muestrame ropa de color [rojo](color)
+    - muestrame ropa de color [verde](color)
+    - muestrame ropa de color [morado](color)
+    - quiero ropa de color [fucsia](color)
+    - quiero ropa de color [lila](color)
+    - quiero ropa de color [negro](color)
+    - quiero ropa de color [negro](color)
+    - tiene ropa de [niño](gender)
+    - tiene ropa de [niña](gender)
+    - [azul](color)
+    - [amarillo](color)
+    - [negro](color)
