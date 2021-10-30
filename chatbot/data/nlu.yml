@@ -279,6 +279,11 @@ nlu:
     - detente
     - stop
     - no sirves
+    - ya no quiero comprar
+    - no quiero comprar nada
+    - cambie de opinion, ya no quiero comprar
+    - no quiero comprar
+    - no quiero comprar ropa
     
 
 - intent: request_clothes
