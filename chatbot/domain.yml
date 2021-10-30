@@ -69,7 +69,7 @@ responses:
     - text: Creeme, tengo muchas habilidades. Soy un asistente creado para brindarte la mejor experiencia de asistencia de compra 🤓.
 
   utter_chitchat/mood_great:
-    - text: Qué bien! Me alegro muchisimo 😁.
+    - text: Súper! Me alegro muchisimo 😁.
     - text: Excelente! Eres el mejor 😄.
 
   utter_chitchat/mood_unhappy:
