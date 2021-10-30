@@ -167,10 +167,13 @@ forms:
         - type: from_entity
           entity: color
           intent: [inform, request_clothes]
+        - type: from_intent
+          intent: deny
+          value: No elegiste un color de preferencia
       preferences:
         - type: from_intent
           intent: deny
-          value: No hay preferencias adicionales
+          value: No añadiste preferencias adicionales
         - type: from_text
           not_intent: affirm
 
