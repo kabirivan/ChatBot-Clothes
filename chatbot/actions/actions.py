@@ -84,10 +84,10 @@ class AskForCategoryAction(Action):
         gender = tracker.get_slot("gender")
 
         if gender == 'niña':
-            buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
+            buttons =[{"title": p, "payload": p.lower()} for p in ALLOWED_CLOTHES_GIRLS]
             dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas 👧🏻:", buttons=buttons)
         else:
-            buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_BOYS]
+            buttons =[{"title": p, "payload": p.lower()} for p in ALLOWED_CLOTHES_BOYS]
             dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niños 👦🏻:", buttons=buttons)
 
         return []

@@ -158,7 +158,6 @@ forms:
       category:
         - type: from_entity
           entity: category
-          intent: [inform, request_clothes]
       number:
         - type: from_entity
           entity: number
