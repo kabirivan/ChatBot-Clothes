@@ -9,7 +9,9 @@ stories:
 
 - story: search clothes form + continue
   steps:
-  - intent: request_clothes
+  - or:
+    - intent: request_clothes
+    - intent: inform
   - action: clothes_form
   - active_loop: clothes_form
   - slot_was_set:

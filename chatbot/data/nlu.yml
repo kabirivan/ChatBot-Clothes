@@ -365,6 +365,10 @@ nlu:
     - quiero comprar ropa de [niña](gender) para seis años
     - quiero comprar ropa de [niño](gender) de color [negro](color) para seis años
     - quiero comprar ropa de [niño](gender) de color [rojo](color) para seis años
+    - quiero comprar ropa de color [celeste](color)
+    - quiero comprar ropa de color [verde](color)
+    - quiero ropa de color [morado](color)
+    - quiero ropa de color [plomo](color)
     - me gustaría comprar ropa de ropa de [niña](gender) para siete años
     - ropa de [niña](gender) para ocho años
     - que tienes?
