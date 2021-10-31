@@ -421,3 +421,13 @@ nlu:
     - [verde](color)
     - [celeste](color)
     - [beige](color)
+
+- synonym: niña
+    examples: |
+    - niñas
+    - nina
+
+- synonym: niño
+    examples: |
+    - niños
+    - nino
