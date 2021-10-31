@@ -5,13 +5,19 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
+from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk.events import FormValidation, SlotSet
+from rasa_sdk.types import DomainDict
 from rasa_sdk.executor import CollectingDispatcher
 from algoliasearch.search_client import SearchClient
 
 client = SearchClient.create('BQCT474121', 'b72f4c8a6b93d0afc8221d06c66e1e66')
 index = client.init_index('dev_clothes_v2')
+
+ALLOWED_COLORS_GIRLS = ['morado', 'amarillo', 'negro', 'rosado', 'celeste', 'rojo', 'palo de rosa']
+ALLOWED_CLOTHES_GIRLS = ['Pantalones', 'Blusas', 'Ternos']
+ALLOWED_COLORS_BOYS = ['rojo', 'azul', 'beige', 'blanco']
+ALLOWED_CLOTHES_BOYS = ['Busos']
 
 
 class ActionHelloWorld(Action):
@@ -25,6 +31,45 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="Hello World!")
 
         return []
+
+
+class ValidateClothesForm(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_clothes_form"
+
+    
+    def validate_color(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `color` value."""
+        gender = tracker.get_slot("gender")
+
+        if gender == 'niña':
+            if slot_value.lower() not in ALLOWED_COLORS_GIRLS:
+                print('color', slot_value.lower())
+                dispatcher.utter_message(text = f"Por el momento disponemos de colores como: \n- Morado\n- Amarillo\n- Negro\n- Rosado\n- Celeste\n- Rojo\n- Palo de Rosa")
+                return {"color": None}
+            dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
+
+    def validate_category(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `category` value."""
+        gender = tracker.get_slot("gender")
+
+        if gender == 'niña':
+            if slot_value.lower() not in ALLOWED_CLOTHES_GIRLS:
+                dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas: \n- Pantalones\n- Blusas\n- Ternos")
+                return {"category": None}
+            dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
 
 
 class ActionProductSearch(Action):
@@ -98,7 +143,7 @@ class ActionProductSearch(Action):
             )
             dispatcher.utter_message(json_message=message)
 
-            slots_to_reset = ["gender", "number", "color", "category"]
+            slots_to_reset = ["gender", "number", "color", "category", "preferences"]
             return [SlotSet(slot, None) for slot in slots_to_reset]
         else:
             # provide out of stock
@@ -107,5 +152,5 @@ class ActionProductSearch(Action):
             )
             dispatcher.utter_message(text=text)
 
-            slots_to_reset = ["gender", "number", "color", "category"]
+            slots_to_reset = ["gender", "number", "color", "category", "preferences"]
             return [SlotSet(slot, None) for slot in slots_to_reset]

@@ -21,19 +21,19 @@ entities:
 slots:
   category:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   number:
     type: float
-    influence_conversation: false
+    influence_conversation: true
   color:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   gender:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   preferences:
     type: text
-    influence_conversation: false
+    influence_conversation: true
 
 responses:
   utter_greet:
@@ -169,7 +169,7 @@ forms:
           intent: [inform, request_clothes]
         - type: from_intent
           intent: deny
-          value: No elegiste un color de preferencia
+          value: No elegiste un color que te guste
       preferences:
         - type: from_intent
           intent: deny
@@ -179,6 +179,7 @@ forms:
 
 actions:
   - action_product_search
+  - validate_clothes_form
 
 session_config:
   session_expiration_time: 60
