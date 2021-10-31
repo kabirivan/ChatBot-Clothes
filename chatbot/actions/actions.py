@@ -6,7 +6,7 @@
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker, FormValidationAction
-from rasa_sdk.events import FormValidation, SlotSet
+from rasa_sdk.events import FormValidation, SlotSet, EventType
 from rasa_sdk.types import DomainDict
 from rasa_sdk.executor import CollectingDispatcher
 from algoliasearch.search_client import SearchClient
@@ -17,7 +17,7 @@ index = client.init_index('dev_clothes_v2')
 ALLOWED_COLORS_GIRLS = ['morado', 'amarillo', 'negro', 'rosado', 'celeste', 'rojo', 'palo de rosa']
 ALLOWED_CLOTHES_GIRLS = ['Pantalones', 'Blusas', 'Ternos']
 ALLOWED_COLORS_BOYS = ['rojo', 'azul', 'beige', 'blanco']
-ALLOWED_CLOTHES_BOYS = ['Busos']
+ALLOWED_CLOTHES_BOYS = ['Busos', 'Camisetas']
 
 
 class ActionHelloWorld(Action):
@@ -67,9 +67,30 @@ class ValidateClothesForm(FormValidationAction):
 
         if gender == 'niña':
             if slot_value.lower() not in ALLOWED_CLOTHES_GIRLS:
-                dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas: \n- Pantalones\n- Blusas\n- Ternos")
+                buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
+                dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas:",
+                buttons=buttons)
                 return {"category": None}
             dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
+
+class AskForCategoryAction(Action):
+    def name(self) -> Text:
+        return "action_ask_category"
+
+    def run(
+            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+
+        gender = tracker.get_slot("gender")
+
+        if gender == 'niña':
+            buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
+            dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas 👧🏻:", buttons=buttons)
+        else:
+            buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_BOYS]
+            dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niños 👦🏻:", buttons=buttons)
+
+        return []
 
 
 class ActionProductSearch(Action):

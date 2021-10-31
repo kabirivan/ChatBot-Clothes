@@ -126,15 +126,15 @@ responses:
         - title: Niño 👦🏻
           payload: '/request_clothes{{"gender":"niño"}}'
 
-  utter_ask_category:
-    - text: 'Contamos con distintos tipos de ropa, como:'
-      buttons:
-        - title: Pantalones Licra 👖
-          payload: '/request_clothes{{"category":"pantalones"}}'
-        - title: Busos 👕
-          payload: '/request_clothes{{"category":"busos"}}'
-        - title: Blusas 👚
-          payload: '/request_clothes{{"category":"blusas"}}'
+  # utter_ask_category:
+  #   - text: 'Contamos con distintos tipos de ropa, como:'
+  #     buttons:
+  #       - title: Pantalones Licra 👖
+  #         payload: '/request_clothes{{"category":"pantalones"}}'
+  #       - title: Busos 👕
+  #         payload: '/request_clothes{{"category":"busos"}}'
+  #       - title: Blusas 👚
+  #         payload: '/request_clothes{{"category":"blusas"}}'
 
   utter_ask_number:
     - text: '¿Para que edad buscas la ropa de {gender}?'
@@ -169,7 +169,7 @@ forms:
           intent: [inform, request_clothes]
         - type: from_intent
           intent: deny
-          value: No elegiste un color que te guste
+          value: No elegiste un color.
       preferences:
         - type: from_intent
           intent: deny
@@ -179,6 +179,7 @@ forms:
 
 actions:
   - action_product_search
+  - action_ask_category
   - validate_clothes_form
 
 session_config:
