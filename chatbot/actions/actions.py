@@ -99,6 +99,26 @@ class ValidateClothesForm(FormValidationAction):
                 buttons=buttons)
                 return {"category": None}
             dispatcher.utter_message(text=f"Exelente elección!")
+    
+    def validate_number(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `number` value."""
+
+        if self.is_int(slot_value) and int(slot_value) > 0:
+            return {"number": slot_value}
+        else:
+            gender = tracker.get_slot("gender")
+            if gender == 'niña' or 'niñas':
+                dispatcher.utter_message(text = f"Tenemos ropa para niñas de 1 a 8 años:")
+            if gender == 'niño' or 'niños':
+                dispatcher.utter_message(text = f"Tenemos ropa para niños de 1 a 6 años:")
+            return {"number": None}
+
         
 
 class AskForCategoryAction(Action):

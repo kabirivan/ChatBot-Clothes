@@ -142,8 +142,8 @@ responses:
   utter_ask_color:
     - text: '¿Algún color en particular 🎨?'
 
-  # utter_ask_preferences:
-  #   - text: ¿Algo adicional que quieras mencionarnos 📝?
+  utter_ask_preferences:
+    - text: ¿Algo adicional que quieras mencionarnos 📝?
 
 forms:
   clothes_form:
@@ -167,12 +167,12 @@ forms:
         - type: from_intent
           intent: deny
           value: No elegiste un color.
-      # preferences:
-      #   - type: from_intent
-      #     intent: deny
-      #     value: No añadiste preferencias adicionales
-      #   - type: from_text
-      #     not_intent: affirm
+      preferences:
+        - type: from_intent
+          intent: deny
+          value: No añadiste preferencias adicionales
+        - type: from_text
+          not_intent: affirm
 
 actions:
   - action_product_search
