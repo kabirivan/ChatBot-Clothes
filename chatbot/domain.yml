@@ -158,9 +158,9 @@ forms:
       category:
         - type: from_entity
           entity: category   
-      # number:
-      #   - type: from_entity
-      #     entity: number
+      number:
+        - type: from_entity
+          entity: number
       # color:
       #   - type: from_entity
       #     entity: color
