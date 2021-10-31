@@ -20,7 +20,10 @@ entities:
 
 slots:
   category:
-    type: text
+    type: categorical
+    values:
+      - niña
+      - niño
     influence_conversation: true
   number:
     type: float

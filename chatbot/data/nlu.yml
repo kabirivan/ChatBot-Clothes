@@ -423,11 +423,15 @@ nlu:
     - [beige](color)
 
 - synonym: niña
-    examples: |
+  examples: |
     - niñas
     - nina
+    - mujer
 
 - synonym: niño
-    examples: |
+  examples: |
     - niños
     - nino
+    - hombre
+    - varón
+    - varon
