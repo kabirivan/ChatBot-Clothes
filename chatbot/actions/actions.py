@@ -18,6 +18,7 @@ ALLOWED_COLORS_GIRLS = ['morado', 'amarillo', 'negro', 'rosado', 'celeste', 'roj
 ALLOWED_CLOTHES_GIRLS = ['Pantalones', 'Blusas', 'Ternos']
 ALLOWED_COLORS_BOYS = ['rojo', 'azul', 'beige', 'blanco']
 ALLOWED_CLOTHES_BOYS = ['Busos', 'Camisetas']
+ALLOWED_GENDERS = ['niños', 'niño', 'niñas', 'niña']
 
 
 class ActionHelloWorld(Action):
@@ -37,6 +38,19 @@ class ValidateClothesForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_clothes_form"
 
+    def validate_gender(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `gender` value."""
+        if slot_value.lower() not in ALLOWED_GENDERS:
+            dispatcher.utter_message(template="utter_ask_gender")
+            return {"gender": None}
+        dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
+
     
     def validate_color(
         self,
@@ -48,10 +62,15 @@ class ValidateClothesForm(FormValidationAction):
         """Validate `color` value."""
         gender = tracker.get_slot("gender")
 
-        if gender == 'niña':
+        if gender == 'niña' or 'niñas':
             if slot_value.lower() not in ALLOWED_COLORS_GIRLS:
-                print('color', slot_value.lower())
                 dispatcher.utter_message(text = f"Por el momento disponemos de colores como: \n- Morado\n- Amarillo\n- Negro\n- Rosado\n- Celeste\n- Rojo\n- Palo de Rosa")
+                return {"color": None}
+            dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
+
+        if gender == 'niño' or 'niños':
+            if slot_value.lower() not in ALLOWED_COLORS_BOYS:
+                dispatcher.utter_message(text = f"Por el momento disponemos de colores como: \n- Rojo\n- Azul\n- Beige\n- Blanco")
                 return {"color": None}
             dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
 
@@ -65,13 +84,22 @@ class ValidateClothesForm(FormValidationAction):
         """Validate `category` value."""
         gender = tracker.get_slot("gender")
 
-        if gender == 'niña':
+        if gender == 'niña' or 'niñas':
             if slot_value.lower() not in ALLOWED_CLOTHES_GIRLS:
                 buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
                 dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas:",
                 buttons=buttons)
                 return {"category": None}
-            dispatcher.utter_message(text=f"Ok! El color **{slot_value}** es una gran elección.")
+            dispatcher.utter_message(text=f"Exelente elección!")
+
+        if gender == 'niño' or 'niños':
+            if slot_value.lower() not in ALLOWED_CLOTHES_BOYS:
+                buttons =[{"title": p, "payload": p} for p in ALLOWED_CLOTHES_BOYS]
+                dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niños:",
+                buttons=buttons)
+                return {"category": None}
+            dispatcher.utter_message(text=f"Exelente elección!")
+        
 
 class AskForCategoryAction(Action):
     def name(self) -> Text:
@@ -158,10 +186,6 @@ class ActionProductSearch(Action):
 
 
         if clothes:
-            # provide in stock message
-            text = (
-                f"Tenemos algunos productos que te pueden interesar"
-            )
             dispatcher.utter_message(json_message=message)
 
             slots_to_reset = ["gender", "number", "color", "category", "preferences"]
