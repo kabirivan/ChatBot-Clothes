@@ -177,7 +177,7 @@ forms:
 actions:
   - action_product_search
   - action_ask_category
-  # - validate_clothes_form
+  - validate_clothes_form
 
 session_config:
   session_expiration_time: 60

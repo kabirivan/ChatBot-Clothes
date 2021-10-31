@@ -36,6 +36,10 @@ stories:
     - color: negro
   - slot_was_set:
     - color: rosado
+  - slot_was_set:
+    - requested_slot: preferences
+  - slot_was_set:
+    - preferences: No añadiste preferencias adicionales
   - intent: stop
   - action: utter_ask_continue
   - intent: affirm
