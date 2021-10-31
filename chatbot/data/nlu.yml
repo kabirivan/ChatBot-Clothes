@@ -302,6 +302,9 @@ nlu:
     - me gustaria comprar [busos](category) para [niños](gender)
     - me gustaria comprar [busos](category)
     - quiero comprar [busos](category)
+    - quiero comprar [blusas](category)
+    - necesito [blusas](category)
+    - me gustaria comprar [blusas](category)
     - [busos](category) [niños](gender)
     - [pantalones](category) [niñas](gender)
     - quiero ver ropa

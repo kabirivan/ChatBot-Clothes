@@ -136,14 +136,14 @@ responses:
   #       - title: Blusas 👚
   #         payload: '/request_clothes{{"category":"blusas"}}'
 
-  utter_ask_number:
-    - text: '¿Para que edad buscas la ropa de {gender}?'
+  # utter_ask_number:
+  #   - text: '¿Para que edad buscas la ropa de {gender}?'
 
-  utter_ask_color:
-    - text: '¿Algún color en particular 🎨?'
+  # utter_ask_color:
+  #   - text: '¿Algún color en particular 🎨?'
 
-  utter_ask_preferences:
-    - text: ¿Algo adicional que quieras mencionarnos 📝?
+  # utter_ask_preferences:
+  #   - text: ¿Algo adicional que quieras mencionarnos 📝?
 
 forms:
   clothes_form:
@@ -157,29 +157,27 @@ forms:
           intent: [inform, request_clothes]
       category:
         - type: from_entity
-          entity: category
-      number:
-        - type: from_entity
-          entity: number
-          intent: [inform, request_clothes]
-      color:
-        - type: from_entity
-          entity: color
-          intent: [inform, request_clothes]
-        - type: from_intent
-          intent: deny
-          value: No elegiste un color.
-      preferences:
-        - type: from_intent
-          intent: deny
-          value: No añadiste preferencias adicionales
-        - type: from_text
-          not_intent: affirm
+          entity: category   
+      # number:
+      #   - type: from_entity
+      #     entity: number
+      # color:
+      #   - type: from_entity
+      #     entity: color
+      #   - type: from_intent
+      #     intent: deny
+      #     value: No elegiste un color.
+      # preferences:
+      #   - type: from_intent
+      #     intent: deny
+      #     value: No añadiste preferencias adicionales
+      #   - type: from_text
+      #     not_intent: affirm
 
 actions:
   - action_product_search
   - action_ask_category
-  - validate_clothes_form
+  # - validate_clothes_form
 
 session_config:
   session_expiration_time: 60

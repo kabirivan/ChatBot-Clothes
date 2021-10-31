@@ -169,7 +169,7 @@ class ActionProductSearch(Action):
         else:
             # provide out of stock
             text = (
-                f"No disponemos de ese producto en específico. Pero puedes seguir buscando"
+                f"No disponemos de ese producto en específico. Pero puedes seguir buscando..."
             )
             dispatcher.utter_message(text=text)
 

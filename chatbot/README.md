@@ -1,6 +1,5 @@
 # ChatBot-Clothes
 
-
 rasa run --enable-api --cors "*"
 
 ## Rasa validate Data
