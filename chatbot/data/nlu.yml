@@ -318,7 +318,7 @@ nlu:
     - me gustaría comprar ropa de [niño](gender) de 5 años
     - me gustaría comprar ropa de [niño](gender) de 6 años
     - ropa de [niño](gender) de 7 años
-    - ropa de [niño](gender) de 8) años
+    - ropa de [niño](gender) de 8 años
     - ropa de [niña](gender) de 3 años
     - ropa de [niña](gender) de 4 años
     - ropa de [niña](gender) de 5 años

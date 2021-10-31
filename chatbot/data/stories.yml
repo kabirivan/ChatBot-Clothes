@@ -22,6 +22,18 @@ stories:
     - requested_slot: category
   - slot_was_set:
     - category: pantalones
+  - slot_was_set:
+    - requested_slot: number
+  - slot_was_set:
+    - number: 2
+  - slot_was_set:
+    - number: 5
+  - slot_was_set:
+    - requested_slot: color
+  - slot_was_set:
+    - color: negro
+  - slot_was_set:
+    - color: rosado
   - intent: stop
   - action: utter_ask_continue
   - intent: affirm

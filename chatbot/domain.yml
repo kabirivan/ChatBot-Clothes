@@ -136,11 +136,11 @@ responses:
   #       - title: Blusas 👚
   #         payload: '/request_clothes{{"category":"blusas"}}'
 
-  # utter_ask_number:
-  #   - text: '¿Para que edad buscas la ropa de {gender}?'
+  utter_ask_number:
+    - text: '¿Para que edad buscas la ropa de {gender}?'
 
-  # utter_ask_color:
-  #   - text: '¿Algún color en particular 🎨?'
+  utter_ask_color:
+    - text: '¿Algún color en particular 🎨?'
 
   # utter_ask_preferences:
   #   - text: ¿Algo adicional que quieras mencionarnos 📝?
@@ -161,12 +161,12 @@ forms:
       number:
         - type: from_entity
           entity: number
-      # color:
-      #   - type: from_entity
-      #     entity: color
-      #   - type: from_intent
-      #     intent: deny
-      #     value: No elegiste un color.
+      color:
+        - type: from_entity
+          entity: color
+        - type: from_intent
+          intent: deny
+          value: No elegiste un color.
       # preferences:
       #   - type: from_intent
       #     intent: deny
