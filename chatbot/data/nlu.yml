@@ -294,6 +294,13 @@ nlu:
     - quiero comprar ropa de [niña](gender)
     - quiero comprar ropa de [nino](gender)
     - quiero comprar ropa de [nina](gender)
+    - quiero comprar ropa de [varon](gender)
+    - quiero comprar ropa de [hombre](gender)
+    - quiero comprar ropa de [mujer](gender)
+    - comprar ropa de [varon](gender)
+    - comprar ropa de [mujer](gender)
+    - ropa de [hombre](gender)
+    - ropa de [mujer](gender)
     - ropa de [nino](gender)
     - ropa de [nina](gender)
     - me gustaria comprar
