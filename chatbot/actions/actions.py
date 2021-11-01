@@ -15,9 +15,9 @@ client = SearchClient.create('BQCT474121', 'b72f4c8a6b93d0afc8221d06c66e1e66')
 index = client.init_index('dev_clothes_v2')
 
 ALLOWED_COLORS_GIRLS = ['morado', 'amarillo', 'negro', 'rosado', 'celeste', 'rojo', 'palo de rosa']
-ALLOWED_CLOTHES_GIRLS = ['pantalones', 'blusas', 'ternos', 'all']
-ALLOWED_COLORS_BOYS = ['rojo', 'azul', 'beige', 'blanco', 'all']
-ALLOWED_CLOTHES_BOYS = ['busos', 'camisetas']
+ALLOWED_CLOTHES_GIRLS = ['pantalones', 'blusas', 'ternos', 'todos']
+ALLOWED_COLORS_BOYS = ['rojo', 'azul', 'beige', 'blanco']
+ALLOWED_CLOTHES_BOYS = ['busos', 'camisetas', 'todos']
 ALLOWED_GENDERS = ['niños', 'niño', 'niñas', 'niña']
 
 
@@ -42,7 +42,7 @@ class ValidateClothesForm(FormValidationAction):
     def change_name_button(option: str) -> List:
         """Add new button"""
 
-        new_button = 'Ver Todo' if option == 'all' else option
+        new_button = 'Ver Todo' if option == 'todos' else option
         return new_button.capitalize()
 
     @staticmethod
@@ -111,11 +111,11 @@ class ValidateClothesForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `category` value."""
         gender = tracker.get_slot("gender")
-        print('gender', gender)
+        print('category', slot_value)
 
         if gender == 'niña':
             if slot_value.lower() not in ALLOWED_CLOTHES_GIRLS:
-                buttons =[{"title": p.capitalize(), "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
+                buttons =[{"title": self.change_name_button(p), "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
                 dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas:",
                 buttons=buttons)
                 return {"category": None}
@@ -125,7 +125,7 @@ class ValidateClothesForm(FormValidationAction):
 
         if gender == 'niño':
             if slot_value.lower() not in ALLOWED_CLOTHES_BOYS:
-                buttons =[{"title": p.capitalize(), "payload": p} for p in ALLOWED_CLOTHES_BOYS]
+                buttons =[{"title": self.change_name_button(p), "payload": p} for p in ALLOWED_CLOTHES_BOYS]
                 dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niños:",
                 buttons=buttons)
                 return {"category": None}
@@ -160,7 +160,7 @@ class AskForCategoryAction(Action):
     def change_name_button(option: str) -> List:
         """Add new button"""
 
-        new_button = 'Ver Todo' if option == 'all' else option
+        new_button = 'Ver Todo' if option == 'todos' else option
         return new_button.capitalize()
 
     def name(self) -> Text:

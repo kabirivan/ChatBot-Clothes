@@ -25,6 +25,8 @@ stories:
   - slot_was_set:
     - category: pantalones
   - slot_was_set:
+    - category: todos
+  - slot_was_set:
     - requested_slot: number
   - slot_was_set:
     - number: 2

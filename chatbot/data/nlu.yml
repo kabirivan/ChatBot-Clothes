@@ -443,8 +443,9 @@ nlu:
     - varón
     - varon
   
-- synonym: todo
+- synonym: todos
   examples: |
     - ver todo
     - todito
     - toda
+    - todo
