@@ -168,10 +168,10 @@ forms:
         - type: from_entity
           entity: color
         - type: from_text
-          intent: [inform, request_clothes]
+          not_intent: [chichat, faq]
         - type: from_intent
           intent: deny
-          value: No elegiste un color.
+          value: No.
       preferences:
         - type: from_intent
           intent: deny
