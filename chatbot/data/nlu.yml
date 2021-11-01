@@ -304,6 +304,10 @@ nlu:
     - ropa de [nino](gender)
     - ropa de [nina](gender)
     - me gustaria comprar
+    - quiero ver [toda](category) la ropa
+    - quiero ver [toda](category) la coleccion
+    - [todo](category)
+    - [todos](category) los modelos
     - me gustaria comprar [pantalones](category) para [niñas](gender)
     - me gustaria comprar [pantalones](category)
     - quiero comprar [pantalones](category)
@@ -438,3 +442,9 @@ nlu:
     - hombre
     - varón
     - varon
+  
+- synonym: todo
+  examples: |
+    - ver todo
+    - todito
+    - toda
