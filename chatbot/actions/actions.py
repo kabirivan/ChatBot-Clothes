@@ -58,7 +58,7 @@ class ValidateClothesForm(FormValidationAction):
         """Validate `gender` value."""
 
         if slot_value.lower() not in ALLOWED_GENDERS:
-            dispatcher.utter_message(template="utter_ask_gender")
+            dispatcher.utter_message(response="utter_ask_gender")
             return {"gender": None}
         else:
             return {"gender": slot_value}
@@ -75,7 +75,11 @@ class ValidateClothesForm(FormValidationAction):
 
         gender = tracker.get_slot("gender")
 
-        if gender == 'niña' or 'niñas':
+        intent_name = tracker.latest_message["intent"]["name"]
+        if intent_name == 'deny':
+            return {"color": slot_value}
+
+        if gender == 'niña':
             if slot_value.lower() not in ALLOWED_COLORS_GIRLS:
                 dispatcher.utter_message(text = f"Por el momento disponemos de colores como: \n- Morado\n- Amarillo\n- Negro\n- Rosado\n- Celeste\n- Rojo\n- Palo de Rosa")
                 return {"color": None}
@@ -83,7 +87,7 @@ class ValidateClothesForm(FormValidationAction):
                 return {"color": slot_value}
             
 
-        if gender == 'niño' or 'niños':
+        if gender == 'niño':
             if slot_value.lower() not in ALLOWED_COLORS_BOYS:
                 dispatcher.utter_message(text = f"Por el momento disponemos de colores como: \n- Rojo\n- Azul\n- Beige\n- Blanco")
                 return {"color": None}
@@ -101,7 +105,7 @@ class ValidateClothesForm(FormValidationAction):
         gender = tracker.get_slot("gender")
         print('gender', gender)
 
-        if gender == 'niña' or 'niñas':
+        if gender == 'niña':
             if slot_value.lower() not in ALLOWED_CLOTHES_GIRLS:
                 buttons =[{"title": p.capitalize(), "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
                 dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas:",
@@ -111,7 +115,7 @@ class ValidateClothesForm(FormValidationAction):
                 dispatcher.utter_message(text=f"Excelente elección 👍🏻")
                 return {"category": slot_value}
 
-        if gender == 'niño' or 'niños':
+        if gender == 'niño':
             if slot_value.lower() not in ALLOWED_CLOTHES_BOYS:
                 buttons =[{"title": p.capitalize(), "payload": p} for p in ALLOWED_CLOTHES_BOYS]
                 dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niños:",
@@ -134,9 +138,9 @@ class ValidateClothesForm(FormValidationAction):
             return {"number": slot_value}
         else:
             gender = tracker.get_slot("gender")
-            if gender == 'niña' or 'niñas':
+            if gender == 'niña':
                 dispatcher.utter_message(text = f"Tenemos ropa para niñas de 1 a 8 años:")
-            if gender == 'niño' or 'niños':
+            if gender == 'niño':
                 dispatcher.utter_message(text = f"Tenemos ropa para niños de 1 a 6 años:")
             return {"number": None}
 
@@ -152,7 +156,7 @@ class AskForCategoryAction(Action):
 
         gender = tracker.get_slot("gender")
 
-        if gender == 'niña' or 'niñas':
+        if gender == 'niña':
             buttons =[{"title": p.capitalize(), "payload": p} for p in ALLOWED_CLOTHES_GIRLS]
             dispatcher.utter_message(text = f"Te cuento que contamos con los siguientes tipos de ropa para niñas 👧🏻:", buttons=buttons)
         else:
