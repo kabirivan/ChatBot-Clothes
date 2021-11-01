@@ -28,6 +28,12 @@ pipeline:
     locale: "es_GB"
     # dimensions to extract
     dimensions: ["number"]
+  - name: SpacyNLP
+    model: "es_core_news_md"
+    case_sensitive: false
+  - name: "SpacyEntityExtractor"
+    dimensions: ["color"]
+  - name: EntitySynonymMapper
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
