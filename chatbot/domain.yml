@@ -167,6 +167,10 @@ forms:
       color:
         - type: from_entity
           entity: color
+        - intent:
+          - inform
+          - request_clothes
+          type: from_text
         - type: from_intent
           intent: deny
           value: No elegiste un color.
