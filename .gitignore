@@ -130,3 +130,4 @@ dmypy.json
 models/*.gz
 
 /chatbot/credentials.yml
+/chatbot/models
