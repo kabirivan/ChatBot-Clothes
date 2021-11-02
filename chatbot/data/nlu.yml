@@ -291,6 +291,11 @@ nlu:
 - intent: request_clothes
   examples: |
     - quiero comprar ropa
+    - que colores no mas tiene
+    - muestrame colores
+    - muestreme colores
+    - enseñame colores
+    - colores
     - quiero comprar ropa de [niño](gender)
     - quiero comprar ropa de [niña](gender)
     - quiero comprar ropa de [nino](gender)
@@ -362,7 +367,7 @@ nlu:
     - ropa de [niña](gender) para 3 años
     - ropa de [niña](gender) para 4 años
     - ropa de [niña](gender) para 5 años
-     - quiero comprar ropa para [mujercitas](gender)
+    - quiero comprar ropa para [mujercitas](gender)
     - quiero comprar ropa para [mujercitas](gender) para 6 años
     - quiero comprar ropa de [niña](gender) para 6 años
     - quiero comprar ropa de [niña](gender) para 7 años

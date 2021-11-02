@@ -36,9 +36,6 @@ slots:
   category:
     type: text
     influence_conversation: true
-  preferences:
-    type: text
-    influence_conversation: true
   comparator:
     type: categorical
     values:
@@ -129,8 +126,7 @@ responses:
         - Ropa de: {gender}\n
         - Categoria: {category}\n
         - Edad: {number}\n
-        - Color: {color}\n
-        - Preferencias: {preferences}\n"
+        - Color: {color}\n"
 
   utter_ask_gender:
     - text: ¿Para que chiquitín buscas la ropa?
@@ -155,9 +151,6 @@ responses:
 
   utter_ask_color:
     - text: '¿Algún color en particular 🎨?'
-
-  utter_ask_preferences:
-    - text: ¿Algo adicional que quieras mencionarnos 📝?
   
   utter_ask_price:
     - text: ¿De cuánto dinero dispones?
@@ -189,12 +182,6 @@ forms:
         - type: from_intent
           intent: deny
           value: No
-      preferences:
-        - type: from_intent
-          intent: deny
-          value: No
-        - type: from_text
-          not_intent: [affirm, chichat]
   clothes_price_form:
     ignored_intents:
       - chichat

@@ -24,6 +24,10 @@ stories:
     - price: 10
   - slot_was_set:
     - price: 4.50
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: niña
   - intent: stop
   - action: utter_ask_continue
   - intent: affirm
@@ -65,10 +69,6 @@ stories:
     - color: negro
   - slot_was_set:
     - color: rosado
-  - slot_was_set:
-    - requested_slot: preferences
-  - slot_was_set:
-    - preferences: No añadiste preferencias adicionales
   - intent: stop
   - action: utter_ask_continue
   - intent: affirm
