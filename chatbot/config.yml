@@ -27,7 +27,7 @@ pipeline:
     url: "http://localhost:8000"
     locale: "es_GB"
     # dimensions to extract
-    dimensions: ["number"]
+    dimensions: ["number", "price"]
   - name: SpacyNLP
     model: "es_core_news_md"
     case_sensitive: false

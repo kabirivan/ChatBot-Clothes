@@ -11,12 +11,15 @@ intents:
   - nlu_fallback
   - inform
   - request_clothes
+  - request_clothes_price
 
 entities:
   - category
   - number
   - color
   - gender
+  - comparator
+  - price
 
 slots:
   category:
@@ -36,6 +39,15 @@ slots:
     influence_conversation: true
   preferences:
     type: text
+    influence_conversation: true
+  comparator:
+    type: categorical
+    values:
+      - mayor
+      - menor
+    influence_conversation: true
+  price:
+    type: float
     influence_conversation: true
 
 responses:

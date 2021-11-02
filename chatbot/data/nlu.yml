@@ -396,6 +396,29 @@ nlu:
     - 3
     - 2
 
+- intent: request_clothes_price
+  examples: |
+    - quiero comprar ropa que cueste [menos](comparator) de 25 dolares
+    - quiero comprar ropa que cueste [menos](comparator) de 12 dolares
+    - quiero comprar ropa que cueste [menos](comparator) de 3.99 dolares
+    - quiero comprar ropa que cueste [mas](comparator) de 20 dolares
+    - quiero comprar ropa que cueste [mas](comparator) de 10 dolares
+    - quiero comprar ropa que cueste [mas](comparator) de 5.99) dolares
+    - ropa [menor](comparator) a 20 dolares
+    - ropa [menor](comparator) a 15 dolares
+    - ropa [menor](comparator) a 9.99 dolares
+    - ropa que cueste [mas](comparator) de 30 dolares
+    - ropa que cueste [mas](comparator) de 10.25 dolares
+    - ropa que cueste [mas](comparator) de 2.99 dolares
+    - ropa que cueste [mayor](comparator) a 10 dolares
+    - ropa que cueste [mayor](comparator) a 7 dolares
+    - ropa [mayor](comparator) a 13 dolares
+    - ropa [mayor](comparator) a 7 dolares
+    - ropa [mayor](comparator) a 14.99 dolares
+    - [tengo]{"entity": "comparator", "value": "menor"} 20 dolares
+    - que me [alcanza]{"entity": "comparator", "value": "menor"} con 10 dolares
+    - [tengo]{"entity": "comparator", "value": "menor"} solamente 5 dolares
+    - quiero comprar ropa pero [tengo]{"entity": "comparator", "value": "menor"} solamente 5 dolares
 
 - intent: inform
   examples: |
@@ -449,3 +472,14 @@ nlu:
     - todito
     - toda
     - todo
+
+- synonym: menor
+  examples: |
+    - menos
+    - tengo
+    - alcanza
+
+- synonym: mayor
+  examples: |
+    - mas
+    - más
