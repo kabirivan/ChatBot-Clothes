@@ -135,17 +135,17 @@ class ValidateClothesForm(FormValidationAction):
                 dispatcher.utter_message(text=f"Excelente elección 👍🏻")
                 return {"category": slot_value}
 
-    def validate_number(
+    def validate_size(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate `number` value."""
+        """Validate `size` value."""
 
         if self.is_int(slot_value) and int(slot_value) > 0:
-            return {"number": slot_value}
+            return {"size": slot_value}
         else:
             gender = tracker.get_slot("gender")
             if gender == 'niña':
@@ -154,7 +154,7 @@ class ValidateClothesForm(FormValidationAction):
             if gender == 'niño':
                 dispatcher.utter_message(
                     text=f"Tenemos ropa para niños de 1 a 5 años:")
-            return {"number": None}
+            return {"size": None}
 
 
 class AskForCategoryAction(Action):
@@ -202,7 +202,7 @@ class ActionProductSearch(Action):
 
         # get slots and save as tuple
         parameters = [tracker.get_slot("gender"), tracker.get_slot(
-            "number"), tracker.get_slot("category"), tracker.get_slot("color")]
+            "size"), tracker.get_slot("category"), tracker.get_slot("color")]
 
         if parameters[0] == 'niño':
             parameters[0] = 'M'
@@ -299,7 +299,7 @@ class ActionProductSearch(Action):
         if clothes:
             dispatcher.utter_message(json_message=message)
 
-            slots_to_reset = ["gender", "number", "color", "category"]
+            slots_to_reset = ["gender", "size", "color", "category"]
             return [SlotSet(slot, None) for slot in slots_to_reset]
         else:
             # provide out of stock
@@ -308,7 +308,7 @@ class ActionProductSearch(Action):
             )
             dispatcher.utter_message(text=text)
 
-            slots_to_reset = ["gender", "number", "color", "category"]
+            slots_to_reset = ["gender", "size", "color", "category"]
             return [SlotSet(slot, None) for slot in slots_to_reset]
 
 
@@ -332,10 +332,10 @@ class ActionProductPriceSearch(Action):
         else:
             parameters[0] = 'F'
 
-        if len(parameters[2]) > 1:
-            parameters[2] = parameters[2][0] 
+        # if len(parameters[2]) > 1:
+        #     parameters[2] = parameters[2][0] 
 
-        print(parameters)
+        # print(parameters)
 
         if parameters[2] == 'menor':
             objects = index.search("", {

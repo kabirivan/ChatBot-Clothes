@@ -58,11 +58,11 @@ stories:
   - slot_was_set:
     - category: todos
   - slot_was_set:
-    - requested_slot: number
+    - requested_slot: size
   - slot_was_set:
-    - number: 2
+    - size: 2
   - slot_was_set:
-    - number: 5
+    - size: 5
   - slot_was_set:
     - requested_slot: color
   - slot_was_set:

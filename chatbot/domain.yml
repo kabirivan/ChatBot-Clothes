@@ -27,7 +27,7 @@ slots:
       - niña
       - niño
     influence_conversation: true
-  number:
+  size:
     type: float
     influence_conversation: true
   color:
@@ -125,7 +125,7 @@ responses:
     - text: "Voy a buscar en nuestro stock ropa con los siguientes parametros:\n
         - Ropa de: {gender}\n
         - Categoria: {category}\n
-        - Edad: {number}\n
+        - Edad: {size}\n
         - Color: {color}\n"
 
   utter_ask_gender:
@@ -146,7 +146,7 @@ responses:
   #       - title: Blusas 👚
   #         payload: '/request_clothes{{"category":"blusas"}}'
 
-  utter_ask_number:
+  utter_ask_size:
     - text: '¿Para que edad buscas la ropa de {gender}?'
 
   utter_ask_color:
@@ -155,7 +155,7 @@ responses:
   utter_ask_comparator:
     - text: ¿Deseas ropa mayor o menor a esa cantidad?
       buttons:
-          - title: Mayor ⬆️
+          - title: Mayor 🔼
             payload: '/request_clothes_price{{"comparator":"mayor"}}'
           - title: Menor 🔽
             payload: '/request_clothes_price{{"comparator":"menor"}}'
@@ -179,7 +179,7 @@ forms:
       category:
         - type: from_entity
           entity: category   
-      number:
+      size:
         - type: from_entity
           entity: number
       color:
