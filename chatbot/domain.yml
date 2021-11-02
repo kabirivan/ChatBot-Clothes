@@ -21,7 +21,7 @@ entities:
   - comparator
 
 slots:
-  category:
+  gender:
     type: categorical
     values:
       - niña
@@ -33,7 +33,7 @@ slots:
   color:
     type: text
     influence_conversation: true
-  gender:
+  category:
     type: text
     influence_conversation: true
   preferences:

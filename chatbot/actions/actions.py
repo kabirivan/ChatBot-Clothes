@@ -102,6 +102,21 @@ class ValidateClothesForm(FormValidationAction):
             else:
                 return {"color": slot_value}
 
+    def validate_preferences(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `preferences` value."""
+
+        intent_name = tracker.latest_message["intent"]["name"]
+        if intent_name == 'deny':
+            return {"preferences": 'no'}
+        else:
+            return {"preferences": slot_value}
+
     def validate_category(
         self,
         slot_value: Any,

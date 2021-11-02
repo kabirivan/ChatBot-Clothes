@@ -362,6 +362,8 @@ nlu:
     - ropa de [niña](gender) para 3 años
     - ropa de [niña](gender) para 4 años
     - ropa de [niña](gender) para 5 años
+     - quiero comprar ropa para [mujercitas](gender)
+    - quiero comprar ropa para [mujercitas](gender) para 6 años
     - quiero comprar ropa de [niña](gender) para 6 años
     - quiero comprar ropa de [niña](gender) para 7 años
     - ropa de [niña](gender) para 8 años
@@ -463,12 +465,15 @@ nlu:
   examples: |
     - niñas
     - nina
+    - ninas
     - mujer
+    - mujercitas
 
 - synonym: niño
   examples: |
     - niños
     - nino
+    - ninos
     - hombre
     - varón
     - varon
