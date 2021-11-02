@@ -244,8 +244,6 @@ class ActionProductSearch(Action):
                 ]
             })
 
-        print(objects)
-
         clothes = objects['hits']
 
         product = []

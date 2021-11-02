@@ -151,6 +151,14 @@ responses:
 
   utter_ask_color:
     - text: '¿Algún color en particular 🎨?'
+
+  utter_ask_comparator:
+    - text: ¿Deseas ropa mayor o menor a esa cantidad?
+      buttons:
+          - title: Mayor ⬆️
+            payload: '/request_clothes_price{{"comparator":"mayor"}}'
+          - title: Menor 🔽
+            payload: '/request_clothes_price{{"comparator":"menor"}}'
   
   utter_ask_price:
     - text: ¿De cuánto dinero dispones?

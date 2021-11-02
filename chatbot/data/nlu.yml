@@ -433,6 +433,7 @@ nlu:
     - [tengo]{"entity": "comparator", "value": "menor"} solamente 5 dolares
     - [tengo]{"entity": "comparator", "value": "menor"} solamente dos dolares
     - quiero comprar ropa pero [tengo]{"entity": "comparator", "value": "menor"} solamente 5 dolares
+    - quiero ropa de 10 dolares 
 
 - intent: inform
   examples: |
