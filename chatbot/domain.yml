@@ -208,6 +208,7 @@ forms:
 
 actions:
   - action_product_search
+  - action_product_price_search
   - action_ask_category
   - validate_clothes_form
 

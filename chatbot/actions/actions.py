@@ -102,7 +102,6 @@ class ValidateClothesForm(FormValidationAction):
             else:
                 return {"color": slot_value}
 
-
     def validate_category(
         self,
         slot_value: Any,
@@ -280,4 +279,88 @@ class ActionProductSearch(Action):
             dispatcher.utter_message(text=text)
 
             slots_to_reset = ["gender", "number", "color", "category"]
+            return [SlotSet(slot, None) for slot in slots_to_reset]
+
+
+class ActionProductPriceSearch(Action):
+    def name(self) -> Text:
+        return "action_product_price_search"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        # get slots and save as tuple
+        parameters = [tracker.get_slot("gender"), tracker.get_slot(
+            "price"), tracker.get_slot("comparator")]
+
+        if parameters[0] == 'niño':
+            parameters[0] = 'M'
+        else:
+            parameters[0] = 'F'
+
+        print(parameters)
+
+        if parameters[2] == 'menor':
+            objects = index.search("", {
+                "numericFilters": [
+                    "price<={0[1]}".format(parameters)
+                ],
+                "facetFilters": [
+                    [
+                        "gender:{0[0]}".format(parameters)
+                    ],
+                ]
+            })
+        else:
+            objects = index.search("", {
+                "numericFilters": [
+                    "price>{0[1]}".format(parameters)
+                ],
+                "facetFilters": [
+                    [
+                        "gender:{0[0]}".format(parameters)
+                    ],
+                ]
+            })
+
+        clothes = objects['hits']
+
+        product = []
+        for x in clothes:
+            print(x['name'])
+            product.append({'title': x['name'], 'subtitle': "{0}\nStock: {1} disponibles \nPrecio: ${2}".format(x['material'], x['quantity'], x['price']), "image_url": x['image'], "buttons": [
+                {
+                    "title": "Comprar",
+                    "url": "https://www.instagram.com/creacionesjasmina/",
+                    "type": "web_url"
+                }
+            ]})
+
+        message = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": product
+                }
+            }
+        }
+
+        if clothes:
+            dispatcher.utter_message(json_message=message)
+
+            slots_to_reset = ["gender", "price", "comparator"]
+            return [SlotSet(slot, None) for slot in slots_to_reset]
+        else:
+            # provide out of stock
+            text = (
+                f"No disponemos de ese producto en específico. Pero puedes seguir buscando..."
+            )
+            dispatcher.utter_message(text=text)
+
+            slots_to_reset = ["gender", "price", "comparator"]
             return [SlotSet(slot, None) for slot in slots_to_reset]
