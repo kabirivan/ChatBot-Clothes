@@ -37,10 +37,7 @@ slots:
     type: text
     influence_conversation: true
   comparator:
-    type: categorical
-    values:
-      - mayor
-      - menor
+    type: text
     influence_conversation: true
   price:
     type: float
@@ -211,6 +208,7 @@ actions:
   - action_product_price_search
   - action_ask_category
   - validate_clothes_form
+  - validate_clothes_price_form
 
 session_config:
   session_expiration_time: 60

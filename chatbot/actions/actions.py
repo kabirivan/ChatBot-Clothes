@@ -35,6 +35,76 @@ class ActionHelloWorld(Action):
         return []
 
 
+class ValidateClothesPriceForm(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_clothes_price_form"
+
+    @staticmethod
+    def change_name_button(option: str) -> List:
+        """Add new button"""
+
+        new_button = 'Ver Todo' if option == 'todos' else option
+        return new_button.capitalize()
+
+    @staticmethod
+    def is_int(string: Any) -> bool:
+        """Check if a string is an integer."""
+
+        try:
+            int(string)
+            return True
+        except ValueError:
+            return False
+
+    def validate_gender(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `gender` value."""
+
+        if slot_value.lower() not in ALLOWED_GENDERS:
+            dispatcher.utter_message(response="utter_ask_gender")
+            return {"gender": None}
+        else:
+            return {"gender": slot_value}
+    
+    def validate_comparator(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `comparator` value."""
+
+        if type(slot_value) is str:
+            return {"comparator": slot_value}
+        else:
+            print('compa', slot_value)
+            return {"comparator": slot_value[0]}
+            
+
+    def validate_price(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `comparator` value."""
+
+        if slot_value >= 3 and slot_value <= 20:
+            return {"price": slot_value}
+        else:
+            dispatcher.utter_message(
+                    text=f"El valor ingresado es inválido. Tenemos ropa desde $3 a $20 dólares 💰.")
+            return {"price": None}
+
+
+
 class ValidateClothesForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_clothes_form"
@@ -144,16 +214,16 @@ class ValidateClothesForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `size` value."""
 
-        if self.is_int(slot_value) and int(slot_value) > 0:
+        if self.is_int(slot_value) and (int(slot_value) >= 1 and int(slot_value)  <= 5):
             return {"size": slot_value}
         else:
             gender = tracker.get_slot("gender")
             if gender == 'niña':
                 dispatcher.utter_message(
-                    text=f"Tenemos ropa para niñas de 1 a 5 años:")
+                    text=f"Lo siento 😭, para esa edad no disponemos. Te cuento que tenemos ropa para niñas de 1 a 5 años:")
             if gender == 'niño':
                 dispatcher.utter_message(
-                    text=f"Tenemos ropa para niños de 1 a 5 años:")
+                    text=f"Lo siento 😭, para esa edad no disponemos. Te cuento que tenemos ropa para niños de 1 a 5 años:")
             return {"size": None}
 
 
@@ -332,10 +402,7 @@ class ActionProductPriceSearch(Action):
         else:
             parameters[0] = 'F'
 
-        # if len(parameters[2]) > 1:
-        #     parameters[2] = parameters[2][0] 
-
-        # print(parameters)
+        print(parameters)
 
         if parameters[2] == 'menor':
             objects = index.search("", {
