@@ -211,37 +211,67 @@ class ActionProductSearch(Action):
 
         print(parameters)
 
-        if parameters[3] == 'no':
-            objects = index.search("", {
-                "facetFilters": [
-                    [
-                        "gender:{0[0]}".format(parameters)
-                    ],
-                    [
-                        "age:{0[1]}".format(parameters)
-                    ],
-                    [
-                        "category:{0[2]}".format(parameters)
-                    ],
-                ]
-            })
+        if parameters[2] != 'todos':
+
+            if parameters[3] == 'no':
+                objects = index.search("", {
+                    "facetFilters": [
+                        [
+                            "gender:{0[0]}".format(parameters)
+                        ],
+                        [
+                            "age:{0[1]}".format(parameters)
+                        ],
+                        [
+                            "category:{0[2]}".format(parameters)
+                        ],
+                    ]
+                })
+            else:
+                objects = index.search("", {
+                    "facetFilters": [
+                        [
+                            "gender:{0[0]}".format(parameters)
+                        ],
+                        [
+                            "age:{0[1]}".format(parameters)
+                        ],
+                        [
+                            "category:{0[2]}".format(parameters)
+                        ],
+                        [
+                            "color:{0[3]}".format(parameters)
+                        ],
+                    ]
+                })
         else:
-            objects = index.search("", {
-                "facetFilters": [
-                    [
-                        "gender:{0[0]}".format(parameters)
-                    ],
-                    [
-                        "age:{0[1]}".format(parameters)
-                    ],
-                    [
-                        "category:{0[2]}".format(parameters)
-                    ],
-                    [
-                        "color:{0[3]}".format(parameters)
-                    ],
-                ]
-            })
+
+            if parameters[3] == 'no':
+                objects = index.search("", {
+                    "facetFilters": [
+                        [
+                            "gender:{0[0]}".format(parameters)
+                        ],
+                        [
+                            "age:{0[1]}".format(parameters)
+                        ],
+                    ]
+                })
+            else:
+                objects = index.search("", {
+                    "facetFilters": [
+                        [
+                            "gender:{0[0]}".format(parameters)
+                        ],
+                        [
+                            "age:{0[1]}".format(parameters)
+                        ],
+                        [
+                            "color:{0[3]}".format(parameters)
+                        ],
+                    ]
+                })
+
 
         clothes = objects['hits']
 
@@ -301,6 +331,9 @@ class ActionProductPriceSearch(Action):
             parameters[0] = 'M'
         else:
             parameters[0] = 'F'
+
+        if len(parameters[2]) > 1:
+            parameters[2] = parameters[2][0] 
 
         print(parameters)
 

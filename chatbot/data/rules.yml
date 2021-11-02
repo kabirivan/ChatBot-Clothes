@@ -50,4 +50,4 @@ rules:
     - active_loop: null
     - action: utter_submit
     - action: utter_slots_values_price
-    # - action: action_product_search
+    - action: action_product_price_search
