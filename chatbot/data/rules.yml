@@ -33,3 +33,19 @@ rules:
     - action: utter_submit
     - action: utter_slots_values
     - action: action_product_search
+
+- rule: activate clothes price form
+  steps:
+    - intent: request_clothes_price
+    - action: clothes_price_form
+    - active_loop: clothes_price_form
+
+- rule: submit price form
+  condition:
+  - active_loop: clothes_price_form
+  steps:
+    - action: clothes_price_form
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values_price
+    # - action: action_product_search

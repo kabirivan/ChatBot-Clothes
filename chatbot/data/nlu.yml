@@ -285,6 +285,7 @@ nlu:
     - cambie de opinion, ya no quiero comprar
     - no quiero comprar
     - no quiero comprar ropa
+    - ya no quiero
     
 
 - intent: request_clothes
@@ -416,8 +417,14 @@ nlu:
     - ropa [mayor](comparator) a 7 dolares
     - ropa [mayor](comparator) a 14.99 dolares
     - [tengo]{"entity": "comparator", "value": "menor"} 20 dolares
+    - [tengo]{"entity": "comparator", "value": "menor"} 5 dolares
+    - [tengo]{"entity": "comparator", "value": "menor"} 1 dolar
+    - [tengo]{"entity": "comparator", "value": "menor"} cinco dolares
     - que me [alcanza]{"entity": "comparator", "value": "menor"} con 10 dolares
+    - que me [alcanza]{"entity": "comparator", "value": "menor"} con diez dolares
+    - que me [alcanza]{"entity": "comparator", "value": "menor"} con quince dolares
     - [tengo]{"entity": "comparator", "value": "menor"} solamente 5 dolares
+    - [tengo]{"entity": "comparator", "value": "menor"} solamente dos dolares
     - quiero comprar ropa pero [tengo]{"entity": "comparator", "value": "menor"} solamente 5 dolares
 
 - intent: inform

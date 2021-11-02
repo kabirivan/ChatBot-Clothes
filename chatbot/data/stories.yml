@@ -7,6 +7,39 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: search clothes by price
+  steps:
+  - intent: request_clothes_price
+  - action: clothes_price_form
+  - active_loop: clothes_price_form
+  - slot_was_set:
+    - requested_slot: comparator
+  - slot_was_set:
+    - comparator: mayor
+  - slot_was_set:
+    - comparator: menor
+  - slot_was_set:
+    - requested_slot: price
+  - slot_was_set:
+    - price: 10
+  - slot_was_set:
+    - price: 4.50
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: niña
+  - slot_was_set:
+    - gender: niño
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: clothes_price_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values_price
+  # - action: action_product_search
+
+
 - story: search clothes form + continue
   steps:
   - or:

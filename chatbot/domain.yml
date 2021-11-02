@@ -126,7 +126,7 @@ responses:
     - text: 'Perfecto! Eso es todo 🤓.'
 
   utter_slots_values:
-    - text: "Voy a buscar en nuestro stock con los siguientes parametros:\n
+    - text: "Voy a buscar en nuestro stock ropa con los siguientes parametros:\n
         - Ropa de: {gender}\n
         - Categoria: {category}\n
         - Edad: {number}\n
@@ -160,6 +160,9 @@ responses:
   utter_ask_preferences:
     - text: ¿Algo adicional que quieras mencionarnos 📝?
 
+  utter_slots_values_price:
+    - text: "Voy a buscar en nuestro stock ropa {comparator} a ${price} 👨🏻‍💻."
+
 forms:
   clothes_form:
     ignored_intents:
@@ -183,13 +186,29 @@ forms:
           not_intent: [chichat, faq]
         - type: from_intent
           intent: deny
-          value: No.
+          value: No
       preferences:
         - type: from_intent
           intent: deny
-          value: No añadiste preferencias adicionales
+          value: No
         - type: from_text
           not_intent: affirm
+  clothes_price_form:
+    ignored_intents:
+      - chichat
+      - faq
+    required_slots:
+      comparator:
+        - type: from_entity
+          entity: comparator
+          intent: request_clothes_price
+      price:
+        - type: from_entity
+          entity: price   
+      gender:
+        - type: from_entity
+          entity: gender
+          intent: [inform, request_clothes]
 
 actions:
   - action_product_search
