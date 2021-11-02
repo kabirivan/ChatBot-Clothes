@@ -399,12 +399,12 @@ nlu:
 
 - intent: request_clothes_price
   examples: |
-    - quiero comprar ropa que cueste [menos](comparator) de 25 dolares
-    - quiero comprar ropa que cueste [menos](comparator) de 12 dolares
-    - quiero comprar ropa que cueste [menos](comparator) de 3.99 dolares
-    - quiero comprar ropa que cueste [mas](comparator) de 20 dolares
-    - quiero comprar ropa que cueste [mas](comparator) de 10 dolares
-    - quiero comprar ropa que cueste [mas](comparator) de 5.99) dolares
+    - quiero comprar ropa que cueste [menos](comparator) de [25](price) dolares
+    - quiero comprar ropa que cueste [menos](comparator) de [12](price) dolares
+    - quiero comprar ropa que cueste [menos](comparator) de [3.99](price) dolares
+    - quiero comprar ropa que cueste [mas](comparator) de [20](price) dolares
+    - quiero comprar ropa que cueste [mas](comparator) de [10](price) dolares
+    - quiero comprar ropa que cueste [mas](comparator) de [5.99](price) dolares
     - ropa [menor](comparator) a 20 dolares
     - ropa [menor](comparator) a 15 dolares
     - ropa [menor](comparator) a 9.99 dolares

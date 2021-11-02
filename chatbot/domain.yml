@@ -19,7 +19,6 @@ entities:
   - color
   - gender
   - comparator
-  - price
 
 slots:
   category:
@@ -159,9 +158,12 @@ responses:
 
   utter_ask_preferences:
     - text: ¿Algo adicional que quieras mencionarnos 📝?
+  
+  utter_ask_price:
+    - text: ¿De cuánto dinero dispones?
 
   utter_slots_values_price:
-    - text: "Voy a buscar en nuestro stock ropa {comparator} a ${price} 👨🏻‍💻."
+    - text: "Voy a buscar en nuestro stock ropa de {gender}, {comparator} a ${price} 👨🏻‍💻."
 
 forms:
   clothes_form:
