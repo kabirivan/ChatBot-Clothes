@@ -19,6 +19,8 @@ rules:
   - action: utter_default
 
 - rule: activate clothes form
+  condition:
+  - active_loop: clothes_form
   steps:
     - intent: request_clothes
     - action: clothes_form

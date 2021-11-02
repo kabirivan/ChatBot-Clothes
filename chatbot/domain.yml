@@ -206,11 +206,10 @@ forms:
           intent: request_clothes_price
       price:
         - type: from_entity
-          entity: price   
+          entity: number
       gender:
         - type: from_entity
           entity: gender
-          intent: [inform, request_clothes]
 
 actions:
   - action_product_search
