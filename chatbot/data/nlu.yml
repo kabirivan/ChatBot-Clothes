@@ -467,6 +467,7 @@ nlu:
     - nina
     - ninas
     - mujer
+    - mujeres
     - mujercitas
 
 - synonym: niño
@@ -475,6 +476,7 @@ nlu:
     - nino
     - ninos
     - hombre
+    - hombres
     - varón
     - varon
   

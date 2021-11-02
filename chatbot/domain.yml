@@ -194,7 +194,7 @@ forms:
           intent: deny
           value: No
         - type: from_text
-          not_intent: affirm
+          not_intent: [affirm, chichat]
   clothes_price_form:
     ignored_intents:
       - chichat
